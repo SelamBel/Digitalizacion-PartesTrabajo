@@ -1,4 +1,4 @@
-# Digitalizaci-n-PartesTrabajo
+# Digitalización-PartesTrabajo
 Proyecto de la asignatura de Digitalización y Sostenibilidad de el grado superior DAW
 
 # 📜 PROYECTO 4 – Digitalización de partes de trabajo
