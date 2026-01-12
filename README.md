@@ -16,8 +16,8 @@ Sustituir el uso de papel por una aplicación de partes de trabajo digitales.
   - Horas trabajadas
 - Descripción de las tareas realizadas.
 - Estado del parte:
-  - Pendiente
   - Enviado
+  - Pendiente
   - Aprobado
 
 ## 🚀 Ampliaciones
