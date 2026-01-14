@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reportes Fijo y Footer con Hueco</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+    body {
+        font-family: sans-serif;
+        margin: 0;
+    }
+
+    header {
+    background-color: rgb(10, 117, 107);
+    color: white;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 5;
+
+    display: flex;
+    justify-content: center; /* centra horizontal */
+    align-items: center;     /* centra vertical */
+}
+
+
+
+    /* DIV DE REPORTES FIJO */
+    .reportes {
+    position: fixed;
+    top: 50px;              /* debajo del header + un poco de aire */
+    left: 10px;             /* margen izquierdo */
+    right: 10px;            /* margen derecho */
+    bottom: 100px;          /* espacio suficiente para footer + hueco */
+    
+    padding: 10px;
+    overflow-y: auto;
+    background-color: white;
+    z-index: 1;
+}
+
+
+
+    /* FOOTER */
+    .footer-container {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        z-index: 5;
+    }
+
+    .footer-bg {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(10, 117, 107);
+        position: relative;
+
+        --circle-radius: 45px;
+        -webkit-mask-image: radial-gradient(circle var(--circle-radius) at 50% 0, transparent 100%, black 100%);
+        mask-image: radial-gradient(circle var(--circle-radius) at 50% 0, transparent 100%, black 100%);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center top;
+        mask-position: center top;
+    }
+
+    .footer-center {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+
+    .circle {
+        width: 65px;
+        height: 65px;
+        background-color: rgb(14, 110, 101);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 1.8rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .circle:hover {
+        transform: scale(1.15);
+        background-color: goldenrod;
+    }
+
+    /*Formulario*/
+    form {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-family: sans-serif;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: rgb(10, 117, 107);
+    box-shadow: 0 0 0 2px rgba(10, 117, 107, 0.2);
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(10, 117, 107);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: goldenrod;
+    transform: scale(1.03);
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Reportes</h1>
+</header>
+
+<main>
+    <div class="reportes">
+        <form>
+            <fieldset>
+                <label for="fecha">Fecha:</label>
+                <input type="date" name="fecha" id="fecha"><br>
+                <label for="horas">Horas trabajadas:</label>
+                <input type="number" name="horas" id="horas"><br>
+                <label for="material">Material utilizado:</label>
+                <textarea rows="5"></textarea><br>
+                <label for="clientes">Cliente:</label>
+                <select id="clientes" name="clientes[]">
+                    <option value="1">Cliente 1</option>
+                    <option value="2">Cliente 2</option>
+                    <option value="3">Cliente 3</option>
+                    <option value="4">Cliente 4</option>
+                    <option value="5">Cliente 5</option>
+                </select>
+            </fieldset>
+            <input type="submit" value="Guardar">
+        </form>
+    </div>
+</main>
+
+<div class="footer-container">
+    <div class="footer-bg"></div>
+    <div class="footer-center">
+        <div class="circle">
+            <i class="fas fa-plus"></i>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
