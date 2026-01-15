@@ -1,5 +1,5 @@
-/* Ajustes específicos de la página */
 header {
+
     height: 50px;
     display: flex;
     justify-content: center;
@@ -32,5 +32,6 @@ form {
 .footer-container {
     background-color: var(--principal);
 }
+
 
 
