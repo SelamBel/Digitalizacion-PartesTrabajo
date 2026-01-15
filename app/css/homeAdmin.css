@@ -54,12 +54,13 @@ tr:hover {
 }
 
 .estado {
-    padding: 5px 12px;
+    padding: 5px 10px;
     border-radius: 20px;
     color: white;
     font-weight: bold;
-    font-size: 0.85rem;
     display: inline-block;
+    text-align: center;
+    min-width: 80px;
 }
 
 .pendiente { background-color: lightsalmon; }
