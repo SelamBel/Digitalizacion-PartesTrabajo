@@ -1,79 +1,26 @@
+/* Ajustes específicos de esta página */
 body {
-    font-family: sans-serif;
-    margin: 0;
     background-color: #f3f6f5;
 }
 
-header {
-    background-color: #0a756b;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-main {
-    position: fixed;
-    top: 80px;
-    left: 10px;
-    right: 10px;
-    bottom: 110px;
-    padding: 20px;
-    overflow-y: auto;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
 h2 {
-    margin-bottom: 20px;
-    color: #0a756b;
+    color: var(--principal);
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
     font-size: 0.95rem;
 }
 
-th, td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-}
-
-th {
-    background-color: #0a756b;
-    color: white;
-}
-
-tr:hover {
-    background-color: #f1f1f1;
-}
-
 .estado {
-    padding: 5px 12px;
-    border-radius: 20px;
-    color: white;
-    font-weight: bold;
     font-size: 0.85rem;
-    display: inline-block;
 }
-
-.pendiente { background-color: lightsalmon; }
-.enviado { background-color: lightskyblue; }
-.aprobado { background-color: lightgreen; }
-.rechazado { background-color: lightcoral; }
 
 .acciones button {
-    border: none;
     padding: 6px 10px;
     border-radius: 6px;
-    cursor: pointer;
     font-size: 0.9rem;
     margin-right: 5px;
+    border: none;
 }
 
 .btn-aprobar {
@@ -95,54 +42,6 @@ tr:hover {
     opacity: 0.85;
 }
 
-.footer-container {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.footer-bg {
-    width: 100%;
-    height: 100%;
-    background-color: rgb(10, 117, 107);
-    position: relative;
-
-    --circle-radius: 45px;
-    -webkit-mask-image: radial-gradient(circle var(--circle-radius) at 50% 0, transparent 100%, black 100%);
-    mask-image: radial-gradient(circle var(--circle-radius) at 50% 0, transparent 100%, black 100%);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center top;
-    mask-position: center top;
-}
-
-.footer-center {
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 .circle {
-    width: 65px;
-    height: 65px;
-    background-color: rgb(14, 110, 101);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.8rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.circle:hover {
-    transform: scale(1.15);
-    background-color: goldenrod;
+    background-color: var(--principal);
 }

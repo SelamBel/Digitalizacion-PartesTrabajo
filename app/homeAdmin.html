@@ -1,72 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home - Administrador</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="./css/homeAdmin.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Administrador</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/homeAdmin.css">
 
 </head>
+
 <body>
 
-<header>
-    Administrador - Partes Pendientes
-</header>
+    <header>
+        <h1>
+            Administrador - Partes Pendientes
+        </h1>
+    </header>
 
-<main>
-    <h2>Partes enviados por los empleados</h2>
+    <main>
+        <h2>Partes enviados por los empleados</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Empleado</th>
-                <th>Fecha</th>
-                <th>Horas</th>
-                <th>Cliente</th>
-                <th>Estado</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Juan Pérez</td>
-                <td>2026-01-14</td>
-                <td>8</td>
-                <td>Cliente 1</td>
-                <td><span class="estado pendiente">Pendiente</span></td>
-                <td class="acciones">
-                    <button class="btn-aprobar"><i class="fas fa-check"></i></button>
-                    <button class="btn-rechazar"><i class="fas fa-times"></i></button>
-                    <button class="btn-ver"><i class="fas fa-eye"></i></button>
-                </td>
-            </tr>
+        <table>
+            <thead>
+                <tr>
+                    <th>Empleado</th>
+                    <th>Fecha</th>
+                    <th>Horas</th>
+                    <th>Cliente</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Juan Pérez</td>
+                    <td>2026-01-14</td>
+                    <td>8</td>
+                    <td>Cliente 1</td>
+                    <td><span class="estado pendiente">Pendiente</span></td>
+                    <td class="acciones">
+                        <button class="btn-aprobar"><i class="fas fa-check"></i></button>
+                        <button class="btn-rechazar"><i class="fas fa-times"></i></button>
+                        <button class="btn-ver"><i class="fas fa-eye"></i></button>
+                    </td>
+                </tr>
 
-            <tr>
-                <td>Ana López</td>
-                <td>2026-01-13</td>
-                <td>6</td>
-                <td>Cliente 3</td>
-                <td><span class="estado enviado">Enviado</span></td>
-                <td class="acciones">
-                    <button class="btn-aprobar"><i class="fas fa-check"></i></button>
-                    <button class="btn-rechazar"><i class="fas fa-times"></i></button>
-                    <button class="btn-ver"><i class="fas fa-eye"></i></button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</main>
+                <tr>
+                    <td>Ana López</td>
+                    <td>2026-01-13</td>
+                    <td>6</td>
+                    <td>Cliente 3</td>
+                    <td><span class="estado enviado">Enviado</span></td>
+                    <td class="acciones">
+                        <button class="btn-aprobar"><i class="fas fa-check"></i></button>
+                        <button class="btn-rechazar"><i class="fas fa-times"></i></button>
+                        <button class="btn-ver"><i class="fas fa-eye"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 
-<div class="footer-container">
-    <div class="footer-bg"></div>
-    <div class="footer-center">
-        <div class="circle">
-            <i class="fas fa-plus"></i>
+    <div class="footer-container">
+        <div class="footer-bg"></div>
+        <div class="footer-center">
+            <div class="circle">
+                <i class="fas fa-plus"></i>
+            </div>
         </div>
     </div>
-</div>
 
 </body>
+
 </html>

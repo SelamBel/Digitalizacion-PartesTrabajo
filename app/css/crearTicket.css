@@ -1,171 +1,36 @@
-body {
-    font-family: sans-serif;
-    margin: 0;
-}
-
+/* Ajustes específicos de la página */
 header {
-    background-color: rgb(10, 117, 107);
-    color: white;
-    position: fixed;
-    width: 100%;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+main {
+    border-radius: 0;
+    bottom: 70px;
+    top: 20px;
+}
+
 .reportes {
-    position: fixed;
-    top: 70px;
-    bottom: 100px;
+    bottom: 70px;
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 20px;
-    overflow-y: auto;
-    background-color: white;
-}
-
-
-.footer-container {
-    position: fixed;
-    background-color:  rgb(10, 117, 107);
-    bottom: 0;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.footer-bg {
-    width: 100%;
-    height: 100%;
-    background-color: rgb(10, 117, 107);
-    position: relative;
-
-    --circle-radius: 45px;
-    -webkit-mask-image: radial-gradient(circle var(--circle-radius) at 50% 0, transparent 100%, black 100%);
-    mask-image: radial-gradient(circle var(--circle-radius) at 50% 0, transparent 100%, black 100%);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center top;
-    mask-position: center top;
-}
-
-.footer-center {
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .circle {
-    width: 65px;
-    height: 65px;
-    background-color: rgb(14, 110, 101);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.8rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.circle:hover {
-    transform: scale(1.15);
-    background-color: goldenrod;
+    background-color: var(--principal);
 }
 
 form {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-top: 50px;
 }
 
-fieldset {
-    border: none;
-    padding: 0;
+.footer-container {
+    background-color: var(--principal);
 }
 
-label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: #333;
-}
 
-input[type="date"],
-input[type="text"],
-input[type="number"],
-textarea,
-select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    box-sizing: border-box;
-}
-
-textarea {
-    resize: vertical;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
-    border-color: rgb(10, 117, 107);
-    box-shadow: 0 0 0 2px rgba(10, 117, 107, 0.2);
-}
-
-input[type="submit"],button {
-    margin-top: 20px;
-    width: 100%;
-    padding: 12px;
-    background-color: rgb(10, 117, 107);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-input[type="submit"]:hover {
-    background-color: goldenrod;
-    transform: scale(1.03);
-}
-
-button:hover {
-    background-color: goldenrod;
-    transform: scale(1.03);
-}
-
-.cancelar{
-    background-color: #64c5b6;
-}
-
-.botones {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.botones button,
-.botones input[type="submit"] {
-    flex: 1;
-    margin-top: 0;
-}
