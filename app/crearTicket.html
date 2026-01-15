@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crear ticket - Administrador</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="./css/crearTicket.css">
+
+</head>
+<body>
+
+<header>
+    <h1>Crear ticket</h1>
+</header>
+
+<main>
+    <div class="reportes">
+        <form>
+            <fieldset>
+
+                <label for="titulo">Título del ticket</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Ej. Reparación impresora">
+
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" rows="5" placeholder="Describe el problema o tarea"></textarea>
+
+                <label for="empleado">Asignar a empleado</label>
+                <select id="empleado" name="empleado">
+                    <option value="">-- Selecciona un empleado --</option>
+                    <option value="1">Juan Pérez</option>
+                    <option value="2">María López</option>
+                    <option value="3">Carlos García</option>
+                    <option value="4">Ana Torres</option>
+                </select>
+
+                <label for="prioridad">Prioridad</label>
+                <select id="prioridad" name="prioridad">
+                    <option value="baja">Baja</option>
+                    <option value="media">Media</option>
+                    <option value="alta">Alta</option>
+                </select>
+
+                <label for="estado">Estado inicial</label>
+                <select id="estado" name="estado">
+                    <option value="pendiente">Pendiente</option>
+                    <option value="en_proceso">En proceso</option>
+                </select>
+
+            </fieldset>
+
+            <div class="botones">
+                <button type="button" class="cancelar">Cancelar</button>
+                <input type="submit" value="Crear ticket">
+            </div>
+
+        </form>
+    </div>
+</main>
+
+<div class="footer-container">
+    
+</div>
+
+</body>
+</html>
