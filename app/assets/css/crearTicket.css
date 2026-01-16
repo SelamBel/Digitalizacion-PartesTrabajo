@@ -1,34 +1,3 @@
-header {
-
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-main {
-    border-radius: 0;
-    bottom: 70px;
-    top: 20px;
-}
-
-.reportes {
-    bottom: 70px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.circle {
-    background-color: var(--principal);
-}
-
-form {
-    margin-top: 50px;
-}
-
 .footer-container {
     background-color: var(--principal);
 }
