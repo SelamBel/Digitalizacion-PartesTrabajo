@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rellenar parte</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="./assets/css/main.css">
-<link rel="stylesheet" href="./assets/css/rellenarParte.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rellenar parte</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/rellenarParte.css">
 
 </head>
+
 <body>
 
-<header>
-    <h1>Nuevo parte de trabajo</h1>
-</header>
+    <header>
+        <h1>Nuevo parte de trabajo</h1>
+    </header>
 
-<main>
-    <div class="reportes">
-        <form>
-            <fieldset>
-                <label for="fecha">Fecha:</label>
-                <input type="date" name="fecha" id="fecha"><br>
-                <label for="horas">Horas trabajadas:</label>
-                <input type="number" name="horas" id="horas"><br>
-                <label for="material">Material utilizado:</label>
-                <textarea rows="5"></textarea><br>
-                <label for="clientes">Cliente:</label>
-                <select id="clientes" name="clientes[]">
-                    <option value="1">Cliente 1</option>
-                    <option value="2">Cliente 2</option>
-                    <option value="3">Cliente 3</option>
-                    <option value="4">Cliente 4</option>
-                    <option value="5">Cliente 5</option>
-                </select>
-            </fieldset>
+    <main>
+        <div class="reportes">
+            <form>
+                <fieldset>
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" name="fecha" id="fecha"><br>
+                    <label for="horas">Horas trabajadas:</label>
+                    <input type="number" name="horas" id="horas"><br>
+                    <label for="material">Material utilizado:</label>
+                    <textarea rows="5"></textarea><br>
+                    <label for="clientes">Cliente:</label>
+                    <select id="clientes" name="clientes[]">
+                        <option value="1">Cliente 1</option>
+                        <option value="2">Cliente 2</option>
+                        <option value="3">Cliente 3</option>
+                        <option value="4">Cliente 4</option>
+                        <option value="5">Cliente 5</option>
+                    </select>
+                </fieldset>
 
-            <div class="botones">
-                <button type="button" class="cancelar">Cancelar</button>
-                <input type="submit" value="Guardar">
-            </div>
+                <div class="botones">
+                    <button type="button" class="cancelar">Cancelar</button>
+                    <input type="submit" value="Guardar">
+                </div>
 
-        </form>
+            </form>
+        </div>
+    </main>
+
+    <div class="footer-container">
     </div>
-</main>
-
-<div class="footer-container">
-    
-</div>
 
 </body>
+
 </html>

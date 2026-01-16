@@ -1,27 +1,9 @@
-/* Ajustes específicos de esta página */
-body {
-    background-color: #f3f6f5;
-}
-
-h2 {
-    color: var(--principal);
-}
-
-table {
-    font-size: 0.95rem;
-}
-
-.estado {
-    font-size: 0.85rem;
-}
-
 .acciones button {
     padding: 6px 10px;
     border-radius: 6px;
     font-size: 0.9rem;
     margin-right: 5px;
     border: none;
-
 }
 
 .btn-aprobar {
@@ -40,9 +22,5 @@ table {
 }
 
 .acciones button:hover {
-    opacity: 0.85;
-}
-
-.circle {
-    background-color: var(--principal);
+    transition: all 0.3s ease;
 }
