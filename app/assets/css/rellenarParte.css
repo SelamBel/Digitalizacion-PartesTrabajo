@@ -1,12 +1,8 @@
-/* Ajustes específicos de esta página */
-header {
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .reportes {
+    padding: 20px;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 12px;
     top: 70px;
     bottom: 100px;
     left: 0;
@@ -15,6 +11,8 @@ header {
     justify-content: center;
     align-items: flex-start;
 }
+
+    
 
 .cancelar {
     background-color: var(--principal-light);
