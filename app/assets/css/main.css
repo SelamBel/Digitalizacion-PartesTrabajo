@@ -1,0 +1,243 @@
+:root {
+    --principal: rgb(10, 117, 107);
+    --principal-dark: rgb(2, 95, 86);
+    --principal-light: rgb(100, 197, 182);
+    --background: var(--white);
+    --background-main: white;
+    --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
+    --font-color-title: var(--white);
+    --font-color-main: #333;
+    --white: #f1f1f1;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background: var(--background);
+    min-height: 100vh;
+    background-attachment: fixed;
+    color: var(--font-color-main);
+}
+
+header {
+    background-color: var(--principal);
+    color: var(--font-color-title);
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+header>h1 {
+    font-size: 1.5rem;
+}
+
+main {
+    position: fixed;
+    top: 70px;
+    left: 15px;
+    right: 15px;
+    bottom: 110px;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: var(--background-main);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px 5px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--principal);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--principal);
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.estado {
+    padding: 5px 12px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    min-width: 80px;
+}
+
+.pendiente {
+    background-color: lightsalmon;
+}
+
+.enviado {
+    background-color: lightskyblue;
+}
+
+.aprobado {
+    background-color: lightgreen;
+}
+
+.rechazado {
+    background-color: lightcoral;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--font);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--principal);
+    box-shadow: 0 0 0 2px var(--principal-dark);
+}
+
+form input[type="submit"],
+form button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--principal);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: goldenrod;
+    transform: scale(1.03);
+}
+
+.cancelar {
+    background-color: var(--principal-light);
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.botones button,
+.botones input[type="submit"] {
+    flex: 1;
+    margin-top: 0;
+}
+
+.footer-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.footer-bg {
+    width: 100%;
+    height: 100%;
+    background-color: var(--principal);
+    position: relative;
+    --circle-radius: 45px;
+    -webkit-mask-image: radial-gradient(circle var(--circle-radius) at 50% 0, transparent 98%, black 100%);
+    mask-image: radial-gradient(circle var(--circle-radius) at 50% 0, transparent 98%, black 100%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center top;
+    mask-position: center top;
+}
+
+.footer-center {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle {
+    width: 65px;
+    height: 65px;
+    background-color: var(--principal);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.circle:hover {
+    transform: scale(1.15);
+    background-color: goldenrod;
+}

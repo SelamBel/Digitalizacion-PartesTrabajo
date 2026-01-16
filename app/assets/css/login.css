@@ -1,69 +1,31 @@
 body {
     font-family: sans-serif;
-    margin: 0;
-    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: linear-gradient(to bottom, #05524a, #64c5b6);
+    min-height: 100vh;
+    margin: 0;
+    background: var(--background-login);
+}
+
+form {
+    background: none;
+    box-shadow: none;
+    padding: 0;
 }
 
 .login-container {
     width: 350px;
-    background-color: #fff;
+    background-color: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .login-container h2 {
     text-align: center;
-    color: rgb(10, 117, 107);
+    color: var(--principal);
     margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: #333;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    box-sizing: border-box;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus {
-    outline: none;
-    border-color: rgb(10, 117, 107);
-    box-shadow: 0 0 0 2px rgba(10, 117, 107, 0.2);
-}
-
-.login-container input[type="submit"] {
-    margin-top: 20px;
-    width: 100%;
-    padding: 12px;
-    background-color: rgb(10, 117, 107);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.login-container input[type="submit"]:hover {
-    background-color: goldenrod;
-    transform: scale(1.03);
 }
 
 .login-container .links {
@@ -72,10 +34,10 @@ input[type="password"]:focus {
 }
 
 .login-container .links a {
-    color: rgb(10, 117, 107);
-    text-decoration: none;
+    color: var(--principal);
     margin: 0 5px;
     font-size: 0.9rem;
+    text-decoration: none;
 }
 
 .login-container .links a:hover {
