@@ -1,16 +1,4 @@
-:root {
-    --principal: rgb(10, 117, 107);
-    --principal-dark: rgb(2, 95, 86);
-    --principal-light: rgb(100, 197, 182);
-    --background: var(--white);
-    --background-main: white;
-    --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
-    --font-color-title: var(--white);
-    --font-color-main: #333;
-    --button-hover: goldenrod;
-    --white: #f1f1f1;
-}
-
+@import url(./temas/default.css);
 body {
     font-family: sans-serif;
     margin: 0;
@@ -31,6 +19,8 @@ header {
     display: flex;
     align-items: center;
     height: 50px;
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
 
 header>h1 {
@@ -55,7 +45,7 @@ ul {
     border-radius: 8px;
     position: absolute;
     right: 10px;
-    top: 3px;
+    top: 10px;
 }
 
 #liBtnCambiarTema ul:not(:first-child) {
