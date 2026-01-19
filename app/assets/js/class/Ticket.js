@@ -1,4 +1,4 @@
-class Ticket {
+export class Ticket {
   constructor(id, titulo, descripcion, prioridad, estado) {
     this._id = id
     this._titulo = titulo
