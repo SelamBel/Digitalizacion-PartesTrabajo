@@ -1,4 +1,4 @@
-class Empleado {
+export class Empleado {
     constructor(id, estado, direccion, telf, email, fnac, nom, ape1, ape2, dni) {
         this._id = id;
         this._estado = estado;

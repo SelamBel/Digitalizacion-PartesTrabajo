@@ -1,4 +1,5 @@
-class Trabajador {
+import { Empleado } from "./Empleado";
+export class Trabajador extends Empleado {
     constructor() {
         this._ticketsAsignados = [];
     }
