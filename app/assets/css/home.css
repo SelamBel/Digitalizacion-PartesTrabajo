@@ -1,3 +1,20 @@
+body {
+    --modo-fecha: "desktop";
+}
+
 .borrador {
     background-color: rgb(151, 151, 151);
+}
+
+@media (max-width: 768px) {
+    body {
+        --modo-fecha: "mobile";
+    }
+    
+    table th:nth-child(3),
+    table td:nth-child(3),
+    table th:nth-child(4),
+    table td:nth-child(4) {
+        display: none;
+    }
 }

@@ -1,3 +1,7 @@
+body {
+    --modo-fecha: "desktop";
+}
+
 .acciones button {
     padding: 6px 10px;
     border-radius: 6px;
@@ -23,4 +27,19 @@
 
 .acciones button:hover {
     transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    body {
+        --modo-fecha: "mobile";
+    }
+
+    table th:nth-child(1),
+    table td:nth-child(1),
+    table th:nth-child(4),
+    table td:nth-child(4),
+    table th:nth-child(6),
+    table td:nth-child(6) {
+        display: none;
+    }
 }
