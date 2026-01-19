@@ -6,6 +6,7 @@
 - Boton para quitar el css de Mangel
 - Poner accesibiliad de estilo Mangel
 - Hacer el trabajo solo cuando se va Dani
+- La creación de tickets / partes sea una pestalla superpuesta encima de los home
 ---
 ### Empieza en inicio de sesión (localStorage?)
 Segun tipo de user: admin o trabajador
