@@ -1,3 +1,7 @@
+// TODO!: Deprecated
+//! Las fechas deben venir formateadas desde la base de datos.
+//! No se deberían obtener ni reformatear desde el DOM.
+
 document.addEventListener("DOMContentLoaded", () => {
     let celdas;
 
