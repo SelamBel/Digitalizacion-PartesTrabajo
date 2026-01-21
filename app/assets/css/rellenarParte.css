@@ -12,12 +12,7 @@
     align-items: flex-start;
 }
 
-    
-
 .cancelar {
     background-color: var(--principal-light);
 }
 
-.footer-container {
-    background-color: var(--principal);
-}
