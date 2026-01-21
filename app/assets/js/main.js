@@ -1,3 +1,5 @@
+// ! (Deprecated)
+/*
 import * as login from './services/login.js';
 
 $(document).ready(function() {
@@ -14,4 +16,4 @@ $(document).ready(function() {
         $("#usuario").val("");
         $("#password").val("");
     });
-});
+});  */
