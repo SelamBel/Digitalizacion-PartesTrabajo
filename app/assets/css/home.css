@@ -1,3 +1,35 @@
+body {
+    --modo-fecha: "desktop";
+}
+
 .borrador {
     background-color: rgb(151, 151, 151);
+}
+
+@media (max-width: 768px) {
+    table th:nth-child(3), table td:nth-child(3),
+    table th:nth-child(5), table td:nth-child(5) {
+        display: none;
+    }
+
+    table td:nth-child(1) {
+        position: relative;
+        padding-left: 25px !important;
+    }
+
+    table td:nth-child(1)::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 6px;
+        background-color: var(--color-estado, #ccc);
+    }
+
+    table tr:has(.borrador)  { --color-estado: rgb(151, 151, 151); }
+    table tr:has(.pendiente) { --color-estado: lightsalmon; }
+    table tr:has(.enviado)   { --color-estado: lightskyblue; }
+    table tr:has(.aprobado)  { --color-estado: lightgreen; }
+    table tr:has(.rechazado) { --color-estado: lightcoral; }
 }
