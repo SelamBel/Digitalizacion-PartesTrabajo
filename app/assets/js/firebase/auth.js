@@ -1,27 +1,26 @@
-import { app } from "./firebase-config.js";
-import { 
-  getAuth, 
-  signInWithEmailAndPassword 
-} from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+import { auth } from "./firebase-config.js"; 
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-const auth = getAuth(app);
+document.addEventListener("DOMContentLoaded", () => {
+    const btnEntrar = document.getElementById("btnEntrar");
 
-const form = document.getElementById("loginForm");
+    btnEntrar.addEventListener("click", async (e) => {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault(); 
+        if (!email || !password) {
+            alert("Por favor, rellena todos los campos");
+            return;
+        }
 
-  const email = document.getElementById("usuario").value;
-  const password = document.getElementById("password").value;
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            console.log("Inicio de sesión exitoso:", userCredential.user.email);
+            window.location.href = "./app/home.html";  
 
-  try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    const user = userCredential.user;
-
-    console.log("Login correcto:", user.email);
-
-  } catch (error) {
-    console.error("Error en login:", error.code, error.message);
-    alert("Usuario o contraseña incorrectos");
-  }
+        } catch (error) {
+            console.error("Error al iniciar sesión:", error.code);
+            alert("Error: " + error.message);
+        }
+    });
 });
