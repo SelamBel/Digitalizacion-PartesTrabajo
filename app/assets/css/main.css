@@ -134,19 +134,23 @@ tr:hover {
 }
 
 .pendiente {
-    background-color: lightsalmon;
+    --color-estado: lightsalmon;
+    background-color: var(--color-estado);
 }
 
 .enviado {
-    background-color: lightskyblue;
+    --color-estado: lightskyblue;
+    background-color: var(--color-estado);
 }
 
 .aprobado {
-    background-color: lightgreen;
+    --color-estado: lightgreen;
+    background-color: var(--color-estado);
 }
 
 .rechazado {
-    background-color: lightcoral;
+    --color-estado: lightcoral;
+    background-color: var(--color-estado);
 }
 
 form {
@@ -176,6 +180,7 @@ input[type="text"],
 input[type="number"],
 input[type="date"],
 input[type="password"],
+input[type="email"],
 textarea,
 select {
     width: 100%;
