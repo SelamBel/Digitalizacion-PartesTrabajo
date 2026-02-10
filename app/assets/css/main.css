@@ -192,10 +192,15 @@ select {
     border: 1px solid #ccc;
     font-size: 1rem;
     box-sizing: border-box;
+    background-color: var(--background-input);
 }
 
 textarea {
-    resize: vertical;
+    resize: none;
+}
+
+input[disabled], *[disabled]{
+    background-color: var(--background-input-disabled);
 }
 
 input:focus,

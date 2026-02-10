@@ -7,6 +7,8 @@
     --background-main: var(--white );
     --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
     --background-form: var(--white );
+    --background-input: var(--white );
+    --background-input-disabled: #c7c7c7;
     --font-color-title: var(--white);
     --font-color-main: var(--black);
     --button-hover: goldenrod;
@@ -23,6 +25,7 @@
     --background-main: rgb(197, 197, 197);
     --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
     --background-form: rgb(226, 226, 226);
+    --background-input: var(--white );
     --font-color-title: var(--white);
     --font-color-main: var(--black);
     --button-hover: rgb(255, 0, 0);
