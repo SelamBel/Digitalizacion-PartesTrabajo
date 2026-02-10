@@ -1,0 +1,46 @@
+:root {
+    --principal: rgb(10, 117, 107);
+    --principal-dark: rgb(2, 95, 86);
+    --principal-light: rgb(100, 197, 182);
+
+    --background: var(--white);
+    --background-main: var(--white );
+    --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
+    --font-color-title: var(--white);
+    --font-color-main: var(--black);
+    --button-hover: goldenrod;
+    --white: #f1f1f1;
+    --black: #333;
+}
+
+:root.sel {
+    --principal: rgb(255, 0, 0);
+    --principal-dark: rgb(156, 9, 9);
+    --principal-light: rgb(250, 95, 95);
+
+    --background: var(--white);
+    --background-main: var(--white );
+    --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
+    --font-color-title: var(--white);
+    --font-color-main: var(--black);
+    --button-hover: goldenrod;
+    --white: #f1f1f1;
+    --black: #333;
+}
+
+:root.dani {
+
+}
+
+:root.rafa {
+
+}
+
+:root.edel {
+
+}
+
+:root.mangel {
+
+}
+
