@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear solicitud - Cliente</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" id="tema-css" href="assets/css/tema.css">
+    <link rel="stylesheet" href="assets/css/crearTicket.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/services/header-footer.js"></script>
+    <script src="assets/js/services/themes.js"></script>
+
+</head>
+
+<body>
+
+    <div class="header-container"></div>
+
+    <main>
+        <form>
+            <fieldset>
+                <label for="titulo">Título de la solicitud</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Ej: Reparación impresora">
+
+                <label for="descripcion">Descripción de la solicitud</label>
+                <textarea id="descripcion" rows="5" placeholder="Describe el problema o tarea"></textarea>
+
+                <label for="localizacion">Localización de el problema</label>
+                <input type="text" id="localizacion" name="localizacion"
+                    placeholder="Ej: Calle Reyes Católicos 5 Puerta 2">
+
+            </fieldset>
+
+            <div class="botones">
+                <button type="button" class="cancelar">Cancelar</button>
+                <input type="submit" value="Crear solicitud">
+            </div>
+
+        </form>
+    </main>
+
+    <div class="footer-container"></div>
+</body>
+
+</html>
