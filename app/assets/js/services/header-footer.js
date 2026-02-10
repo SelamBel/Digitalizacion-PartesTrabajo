@@ -1,14 +1,15 @@
-fetch("assets/header-footer/header.html")
-    .then(res => res.text())
-    .then(html => {
-        document.querySelector('.header-container').innerHTML = html;
-        document.getElementById("headerTitle").innerHTML = document.title;
-    })
-    .catch(err => console.error("Error cargando el header:", err));
-    
-fetch("assets/header-footer/footer.html")
-    .then(res => res.text())
-    .then(html => {
-        document.querySelector('.footer-container').innerHTML = html;
-    })
-    .catch(err => console.error("Error cargando el footer:", err));
+$(document).ready(function() {
+
+    initTheme();
+
+    $(".header-container").load("assets/header-footer/header.html", function() {
+        $("#headerTitle").text(document.title);
+
+        $(".btnCambiarTema").on("click", function() {
+            const tema = $(this).data("tema") || $(this).text().toLowerCase();
+            setTheme(tema);
+        });
+    });
+
+    $(".footer-container").load("assets/header-footer/footer.html");
+});
