@@ -23,20 +23,35 @@
         <div class="reportes">
             <form>
                 <fieldset>
+                    <label for="cliente">Cliente</label>
+                    <textarea id="descripcion" rows="2" placeholder="Datos del cliente" disabled></textarea>
+
+                    <label for="titulo">Título de la solicitud</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Ej: Reparación impresora" disabled>
+
+                    <label for="descripcion">Descripción de la solicitud</label>
+                    <textarea id="descripcion" rows="4" placeholder="Describe el problema o tarea" disabled></textarea>
+
+                    <label for="localizacion">Localización de el problema</label>
+                    <input type="text" id="localizacion" name="localizacion"
+                        placeholder="Ej: Calle Reyes Católicos 5 Puerta 2" disabled>
+
+                    <label for="empleado">Asignar a empleado</label>
+                    <select id="empleado" name="empleado" multiple disabled>
+                        <option value="1">Juan Pérez</option>
+                        <option value="2">María López</option>
+                        <option value="3">Carlos García</option>
+                        <option value="4">Ana Torres</option>
+                    </select>
+
                     <label for="fecha">Fecha:</label>
                     <input type="date" name="fecha" id="fecha"><br>
+
                     <label for="horas">Horas trabajadas:</label>
                     <input type="number" name="horas" id="horas"><br>
+                    
                     <label for="material">Material utilizado:</label>
                     <textarea rows="5"></textarea><br>
-                    <label for="clientes">Cliente:</label>
-                    <select id="clientes" name="clientes[]">
-                        <option value="1">Cliente 1</option>
-                        <option value="2">Cliente 2</option>
-                        <option value="3">Cliente 3</option>
-                        <option value="4">Cliente 4</option>
-                        <option value="5">Cliente 5</option>
-                    </select>
                 </fieldset>
 
                 <div class="botones">

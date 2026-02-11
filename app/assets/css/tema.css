@@ -6,6 +6,9 @@
     --background: var(--white);
     --background-main: var(--white );
     --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
+    --background-form: var(--white );
+    --background-input: var(--white );
+    --background-input-disabled: #c7c7c7;
     --font-color-title: var(--white);
     --font-color-main: var(--black);
     --button-hover: goldenrod;
@@ -14,16 +17,18 @@
 }
 
 :root.sel {
-    --principal: rgb(255, 0, 0);
-    --principal-dark: rgb(156, 9, 9);
-    --principal-light: rgb(250, 95, 95);
+    --principal: rgb(66, 66, 66);
+    --principal-dark: rgb(22, 22, 22);
+    --principal-light: rgb(114, 114, 114);
 
-    --background: var(--white);
-    --background-main: var(--white );
+    --background: rgb(129, 129, 129);
+    --background-main: rgb(197, 197, 197);
     --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
+    --background-form: rgb(226, 226, 226);
+    --background-input: var(--white );
     --font-color-title: var(--white);
     --font-color-main: var(--black);
-    --button-hover: goldenrod;
+    --button-hover: rgb(255, 0, 0);
     --white: #f1f1f1;
     --black: #333;
 }
