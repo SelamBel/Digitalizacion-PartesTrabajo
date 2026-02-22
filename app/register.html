@@ -7,14 +7,15 @@
     <title>Registro</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/tema.css">
     <link rel="stylesheet" href="assets/css/login.css">
 
-    <script type="module" src="assets/js/firebase/auth.js"></script>
-    <script src="assets/js/services/themes.js"></script>
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    
+    <script src="assets/js/services/themes.js"></script>
+    <script type="module" src="assets/js/header-footer.js"></script>
+    <script type="module" src="assets/js/firebase/register.js"></script>
 </head>
 
 <body>
@@ -36,9 +37,9 @@
             <label for="password">Contraseña</label>
             <input type="password" id="password" name="password" placeholder="Ej: SyN3r4eVr" required>
             <label for="password">Confirmar contraseña</label>
-            <input type="password" id="password" name="password" placeholder="Ej: SyN3r4eVr" required>
+            <input type="password" id="confirmPass" name="confirmPass" placeholder="Ej: SyN3r4eVr" required>
 
-            <button type="button" id="btnEntrar">Entrar</button>
+            <button type="button" id="btnRegistrar">Registrar</button>
         </form>
 
         <div class="links">
