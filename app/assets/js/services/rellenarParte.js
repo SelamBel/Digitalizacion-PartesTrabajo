@@ -2,58 +2,87 @@ import { Ticket } from "../class/Ticket.js";
 import { Parte } from "../class/Parte.js";
 import { Cliente } from "../class/Cliente.js";
 
-let ticket;
+//TODO: DATOS DE EJEMPLO. BORRAR CUANDO SE TENGA ACCESO A BASE DE DATOS
+const empleados = ["Sel", "Mangel"];
+const totalEmpleados = ["Sel", "Mangel", "Edel", "Rafa", "Dani"];
+const cliente = new Cliente("Pepe Carlo", "622942844", "pepe@correo.com");
+let ticket = new Ticket(
+  "Titulo de problema problematico",
+  cliente,
+  "Descripción de la movida",
+  "Mi casa chula",
+  empleados,
+  2,
+  "hecha",
+);
 
 $(document).ready(function () {
-    rellenarConTicket();
-    $("#submitParte").on("click", recogerParte);
-    $("#cancelarParte").on("click", cancelarParte);
+  rellenarConTicket();
+  $("#form_partes").on("submit", function (e) {
+    recogerParte(e);
+  });
+  $("#cancelarParte").on("click", cancelarParte);
 });
 
 function rellenarConTicket() {
-    //TODO: DATOS DE EJEMPLO. BORRAR CUANDO SE TENGA ACCESO A BASE DE DATOS
-    const empleados = ["Sel", "Mangel"];
-    const totalEmpleados = ["Sel", "Mangel", "Edel", "Rafa", "Dani"];
-    const cliente = new Cliente("Pepe Carlo", "622942844", "pepe@correo.com");
+  console.log(ticket);
 
-    ticket = new Ticket("Titulo de problema problematico", cliente, "Descripción de la movida", "Mi casa chula", empleados, 2, "hecha");
+  $("#descripcionCliente").val(ticket.clienteTXT());
+  $("#titulo").val(ticket.titulo);
+  $("#descripcionSolicitud").val(ticket.descripcion);
+  $("#localizacion").val(ticket.localicacion);
 
-    console.log(ticket);
-    
-
-    $("#descripcionCliente").val(ticket.clienteTXT());
-    $("#titulo").val(ticket.tituloSolicitud);
-    $("#descripcionSolicitud").val(ticket.descripcionSolicitud);
-    $("#localizacion").val(ticket.localicacionSolicitud);
-
-    const select = $("#empleado");
-    select.empty();
-    totalEmpleados.forEach(function (empleado) {
-        const option = $("<option>").val(empleado).text(empleado);
-        if (ticket.empleados.includes(empleado)) {
-            option.prop("selected", true);
-        }
-        select.append(option);
-    });
-}
-
-function recogerParte() {
-    const parte = new Parte(
-        $("#titulo").val(),
-        $("#descripcionCliente").val(),
-        $("#descripcionSolicitud").val(),
-        $("#localizacion").val(),
-        $("#empleado").val(),
-        ticket.prioridad,
-        ticket.estado,
-        $("#fecha").val(),
-        $("#horas").val(),
-        $("#materialUtilizado").val()
-    );
-
-    console.log(parte);
+  const select = $("#empleado");
+  select.empty();
+  totalEmpleados.forEach(function (empleado) {
+    const option = $("<option>").val(empleado).text(empleado);
+    if (ticket.empleados.includes(empleado)) {
+      option.prop("selected", true);
+    }
+    select.append(option);
+  });
 }
 
 function cancelarParte() {
-    window.location.href = "../../index.html";
+  window.location.href = "./home.html";
+}
+
+function recogerParte(e) {
+  e.preventDefault();
+
+  const datos = recogerDatos();
+
+  const parte = new Parte(
+    ticket.titulo,
+    ticket.cliente,
+    ticket.descripcion,
+    ticket.localicacion,
+    ticket.empleados,
+    ticket.prioridad,
+    ticket.estado,
+    datos.get("fecha"),
+    datos.get("horas"),
+    datos.get("materialUtilizado"),
+  );
+
+  console.log(parte);
+}
+
+function recogerDatos() {
+  const fecha = $("#fecha").val().trim();
+  const horas = $("#horas").val().trim();
+  const materialUtilizado = $("#materialUtilizado").val().trim();
+
+  if (!fecha || !horas || !materialUtilizado) {
+    alert("Por favor, completa todos los campos.");
+    return;
+  }
+
+  $(".response").fadeIn();
+
+  return new Map([
+    ["fecha", fecha],
+    ["horas", horas],
+    ["materialUtilizado", materialUtilizado],
+  ]);
 }
