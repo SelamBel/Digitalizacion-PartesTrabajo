@@ -1,0 +1,55 @@
+:root {
+    --principal: rgb(10, 117, 107);
+    --principal-dark: rgb(2, 95, 86);
+    --principal-light: rgb(100, 197, 182);
+    --succes-borde: rgb(100, 197, 108);
+    --succes: rgba(100, 197, 132, 0.33);
+
+    --background: var(--white);
+    --background-main: var(--white );
+    --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
+    --background-form: var(--white );
+    --background-input: var(--white );
+    --background-input-disabled: #c7c7c7;
+    --font-color-title: var(--white);
+    --font-color-main: var(--black);
+    --button-hover: goldenrod;
+    --white: #f1f1f1;
+    --black: #333;
+    --logout-button: rgb(182, 0, 0);
+    --logout-button-hover: rgb(136, 0, 0);
+}
+
+:root.sel {
+    --principal: rgb(66, 66, 66);
+    --principal-dark: rgb(22, 22, 22);
+    --principal-light: rgb(114, 114, 114);
+
+    --background: rgb(129, 129, 129);
+    --background-main: rgb(197, 197, 197);
+    --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
+    --background-form: rgb(226, 226, 226);
+    --background-input: var(--white );
+    --font-color-title: var(--white);
+    --font-color-main: var(--black);
+    --button-hover: rgb(255, 0, 0);
+    --white: #f1f1f1;
+    --black: #333;
+}
+
+:root.dani {
+
+}
+
+:root.rafa {
+
+}
+
+:root.edel {
+
+}
+
+:root.mangel {
+
+}
+

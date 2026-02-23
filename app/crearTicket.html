@@ -4,11 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear ticket - Administrador</title>
+    <title>Crear ticket</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" id="tema-css" href="assets/css/tema.css">
     <link rel="stylesheet" href="assets/css/crearTicket.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/services/header-footer.js" type="module"></script>
+    <script src="assets/js/services/themes.js"></script>
 
 </head>
 
@@ -20,15 +25,21 @@
         <form>
             <fieldset>
 
-                <label for="titulo">Título del ticket</label>
-                <input type="text" id="titulo" name="titulo" placeholder="Ej. Reparación impresora">
+                <label for="cliente">Cliente</label>
+                <textarea id="descripcion" rows="2" placeholder="Datos del cliente" disabled></textarea>
 
-                <label for="descripcion">Descripción</label>
-                <textarea id="descripcion" rows="5" placeholder="Describe el problema o tarea"></textarea>
+                <label for="titulo">Título de la solicitud</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Ej: Reparación impresora" disabled>
+
+                <label for="descripcion">Descripción de la solicitud</label>
+                <textarea id="descripcion" rows="4" placeholder="Describe el problema o tarea" disabled></textarea>
+
+                <label for="localizacion">Localización de el problema</label>
+                <input type="text" id="localizacion" name="localizacion"
+                    placeholder="Ej: Calle Reyes Católicos 5 Puerta 2" disabled>
 
                 <label for="empleado">Asignar a empleado</label>
-                <select id="empleado" name="empleado">
-                    <option value="">-- Selecciona un empleado --</option>
+                <select id="empleado" name="empleado" multiple>
                     <option value="1">Juan Pérez</option>
                     <option value="2">María López</option>
                     <option value="3">Carlos García</option>
@@ -59,7 +70,6 @@
     </main>
 
     <div class="footer-container"></div>
-    <script src="assets/js/services/header-footer.js"></script>
 </body>
 
 </html>

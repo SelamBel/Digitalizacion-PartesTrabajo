@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear solicitud - Cliente</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" id="tema-css" href="assets/css/tema.css" />
+    <link rel="stylesheet" href="assets/css/crearTicket.css" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/services/header-footer.js" type="module"></script>
+    <script src="assets/js/services/themes.js"></script>
+    <script type="module" src="assets/js/services/solicitudes.js"></script>
+  </head>
+
+  <body>
+    <div class="header-container"></div>
+
+    <main>
+      <form id="form_solicitud">
+        <fieldset>
+          <label for="nombre">Nombre completo</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Ej: Juan Pérez"
+            required
+          />
+
+          <label for="telefono">Teléfono</label>
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            placeholder="Ej: 600123456"
+            pattern="[0-9]{9}"
+            required
+          />
+
+          <label for="correo">Correo electrónico</label>
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            placeholder="Ej: juan@email.com"
+            required
+          />
+
+          <label for="titulo">Título de la solicitud</label>
+          <input
+            type="text"
+            id="titulo"
+            name="titulo"
+            placeholder="Ej: Reparación impresora"
+            required
+          />
+
+          <label for="descripcion">Descripción de la solicitud</label>
+          <textarea
+            id="descripcion"
+            rows="5"
+            placeholder="Describe el problema o tarea"
+            required
+          ></textarea>
+
+          <label for="localizacion">Localización de el problema</label>
+          <input
+            type="text"
+            id="localizacion"
+            name="localizacion"
+            placeholder="Ej: Calle Reyes Católicos 5 Puerta 2"
+            required
+          />
+        </fieldset>
+        
+        <div class="response"> <i class="fa-regular fa-circle-check"></i> Datos recogidos con exito</div>
+
+        <div class="botones">
+          <button type="button" id="cancelar_solicitud" class="cancelar">
+            Cancelar
+          </button>
+          <input type="submit" value="Crear solicitud" />
+        </div>
+      </form>
+    </main>
+
+    <div class="footer-container"></div>
+  </body>
+</html>

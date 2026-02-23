@@ -1,5 +1,6 @@
-import { auth } from "./firebase-config.js"; 
+import { auth, db } from "./firebase-config.js"; 
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const btnEntrar = document.getElementById("btnEntrar");
@@ -15,8 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            console.log("Inicio de sesión exitoso:", userCredential.user.email);
-            window.location.href = "./app/home.html";  
+            const user = userCredential.user;
+
+            const docSnap = await getDoc(doc(db, "usuarios", user.uid));
+
+            if (docSnap.exists() && docSnap.data().rol === "admin") {
+                window.location.href = "./app/homeAdmin.html";
+            } else {
+                window.location.href = "./app/home.html";
+            }
 
         } catch (error) {
             console.error("Error al iniciar sesión:", error.code);
