@@ -26,7 +26,29 @@ export function obtenerNombreUsuario(callback) {
                 callback("Usuario");
             }
         } else {
-            callback(null); // No hay sesión iniciada
+            callback(null); 
+        }
+    });
+}
+
+export function esAdmin(callback) {
+    onAuthStateChanged(auth, async (user) => {
+        if (user) {
+            try {
+                const docRef = doc(db, "usuarios", user.uid);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    callback(docSnap.data().rol === "admin");
+                } else {
+                    callback(false);
+                }
+            } catch (error) {
+                console.error("Error al comprobar rol:", error);
+                callback(false);
+            }
+        } else {
+            callback(null); 
         }
     });
 }
