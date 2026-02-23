@@ -14,6 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="assets/js/services/header-footer.js" type="module"></script>
     <script src="assets/js/services/themes.js"></script>
+    <script type="module" src="assets/js/services/homeAdmin.js"></script>
 </head>
 
 <body>
@@ -21,45 +22,18 @@
     <div class="header-container"></div>
 
     <main>
-        <h2>Partes enviados por los empleados</h2>
-        <table>
+        <h2>Solicitudes de clientes</h2>
+        <table id="tabla-solicitudes">
             <thead>
                 <tr>
-                    <th>Empleado</th>
-                    <th>Fecha</th>
-                    <th>Horas</th>
                     <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Título</th>
+                    <th>Localización</th>
                     <th>Estado</th>
-                    <th>Acciones</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Juan Pérez</td>
-                    <td>2026/01/14</td>
-                    <td>8</td>
-                    <td>Cliente 1</td>
-                    <td><span class="estado pendiente">Pendiente</span></td>
-                    <td class="acciones">
-                        <button class="btn-aprobar"><i class="fas fa-check"></i></button>
-                        <button class="btn-rechazar"><i class="fas fa-times"></i></button>
-                        <button class="btn-ver"><i class="fas fa-eye"></i></button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Ana López</td>
-                    <td>2026/01/13</td>
-                    <td>6</td>
-                    <td>Cliente 3</td>
-                    <td><span class="estado enviado">Enviado</span></td>
-                    <td class="acciones">
-                        <button class="btn-aprobar"><i class="fas fa-check"></i></button>
-                        <button class="btn-rechazar"><i class="fas fa-times"></i></button>
-                        <button class="btn-ver"><i class="fas fa-eye"></i></button>
-                    </td>
-                </tr>
-            </tbody>
+            <tbody></tbody>
         </table>
     </main>
 
