@@ -1,14 +1,14 @@
 import { auth, db } from "./firebase-config.js"; 
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const btnRegistrar = document.getElementById("btnRegistrar");
 
     btnRegistrar.addEventListener("click", async () => {
-        const nombre = document.getElementById("cliente").value;
-        const dni = document.getElementById("dni").value;
-        const email = document.getElementById("email").value;
+        const nombre = document.getElementById("cliente").value.trim();
+        const dni = document.getElementById("dni").value.trim();
+        const email = document.getElementById("email").value.trim();
         const pass = document.getElementById("password").value;
         const confirmPass = document.getElementById("confirmPass").value;
 
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 dni: dni,
                 email: email,
                 rol: "usuario",
-                createdAt: new Date()
+                createdAt: serverTimestamp() 
             });
 
             alert("¡Cuenta creada con éxito!");
@@ -44,7 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         } catch (error) {
             console.error(error);
-            alert("Error al registrar: " + error.message);
+
+            if (error.code === "auth/email-already-in-use") {
+                alert("Este email ya está registrado.");
+            } else if (error.code === "auth/invalid-email") {
+                alert("El email no es válido.");
+            } else {
+                alert("Error al registrar: " + error.message);
+            }
         }
     });
 });
