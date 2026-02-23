@@ -55,3 +55,14 @@ async function cargarSolicitudes() {
         console.error("Error al cargar solicitudes:", error);
     }
 }
+
+async function cargarTickets() {
+    try {
+        const q = query(
+            collection(db, "solicitudes"), 
+            orderBy("creadoEn", "desc")
+        );
+    } catch (error) {
+        console.error("Error al cargar solicitudes:", error);
+    }
+}
