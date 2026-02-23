@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Reporte</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" id="tema-css" href="assets/css/tema.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/services/themes.js"></script>
+    <script src="assets/js/services/header-footer.js"></script>
+    
+    <style>
+        .detalle-container { max-width: 600px; margin: 50px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: var(--bg-color, white); }
+        .campo { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        label { font-weight: bold; color: #555; display: block; }
+        .btn-volver { padding: 10px 20px; cursor: pointer; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="header-container"></div>
+
+    <main>
+        <div class="detalle-container">
+            <h1>Detalle del Reporte</h1>
+            <div id="contenido-reporte"></div>
+            <button class="btn-volver" onclick="window.history.back()">Volver</button>
+        </div>
+    </main>
+
+    <div class="footer-container"></div>
+
+    <script src="./assets/js/services/detalle-reporte.js"></script>
+</body>
+</html>
