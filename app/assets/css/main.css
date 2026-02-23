@@ -43,27 +43,54 @@ ul {
     background-color: var(--principal-dark);
     padding: 5px;
     position: absolute;
-    left: 10px;
-    top: 10px;
-}
-
-#btnCerrarSesion{
-    background-color: var(--logout-button);
-    border: none;
-    padding: 10px;
-    right: 10px;
-    top: 13px;
-}
-
-#liBtnCambiarTema,
-#btnCerrarSesion{
-    box-shadow: 0px 0px 2px 2px var(--principal-dark);
-    border: none;
-    color: white;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 10px;
+    top: 10px;
+    border: none;
+    color: white;
+    border-radius: 8px;
+}
+
+#liBtnCambiarTema ul {
+    width: 100%;
+}
+
+.btnCambiarTema,
+#btnCerrarSesion {
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    margin: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.btnCambiarTema {
+    background-color: var(--principal-dark);
+    flex-grow: 1;
+    width: 100%;
+    margin: 0;
+
+}
+
+
+#btnCerrarSesion {
+    background-color: var(--logout-button);
+    border: none;
+    right: 10px;
+    transition: all 0.3s ease;
     border-radius: 8px;
     position: absolute;
+}
+
+
+#btnCerrarSesion:hover {
+    background-color:var(--logout-button-hover);
 }
 
 #liBtnCambiarTema ul:not(:first-child) {
@@ -79,19 +106,6 @@ ul {
     opacity: 1;
 }
 
-
-#liBtnCambiarTema .btnCambiarTema {
-    background-color: var(--principal-dark);
-    border: none;
-    color: white;
-    padding: 8px 10px;
-    margin: 0;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
 
 #liBtnCambiarTema .btnCambiarTema ul {
     text-align: center;
