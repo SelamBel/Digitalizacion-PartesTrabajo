@@ -18,6 +18,8 @@ function recogerSolicitud(e) {
 
   const datos = recogerDatos();
 
+  if (!datos) return;
+
   console.log("DATOS:", datos);
 
   const cliente = new Cliente(

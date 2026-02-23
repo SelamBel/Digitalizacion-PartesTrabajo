@@ -52,7 +52,7 @@ function recogerParte(e) {
   e.preventDefault();
 
   const datos = recogerDatos();
-
+  if (!datos) return;
   const parte = new Parte(
     ticket.titulo,
     ticket.cliente,
