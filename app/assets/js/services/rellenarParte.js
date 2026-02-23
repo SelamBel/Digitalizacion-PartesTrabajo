@@ -19,11 +19,12 @@ let ticket = new Ticket(
 );
 
 $(document).ready(function () {
-    rellenarConTicket();
-    $("#form_partes").on("submit", function (e) {
-        recogerParte(e);
-    });
-    $("#cancelarParte").on("click", cancelarParte);
+  rellenarDate();
+  rellenarConTicket();
+  $("#form_partes").on("submit", function (e) {
+    recogerParte(e);
+  });
+  $("#cancelarParte").on("click", cancelarParte);
 });
 
 function rellenarConTicket() {
@@ -52,25 +53,28 @@ function cancelarParte() {
 async function recogerParte(e) {
     e.preventDefault();
 
-    const datos = recogerDatos();
-    if (!datos) return;
-
-    const empleadosSeleccionados = $("#empleado").val(); 
-
-    const parte = new Parte(
-        ticket.titulo,
-        ticket.cliente,
-        ticket.descripcion,
-        ticket.localicacion,
-        empleadosSeleccionados,
-        ticket.prioridad,
-        ticket.estado,
-        datos.get("fecha"),
-        datos.get("horas"),
-        datos.get("materialUtilizado"),
-    );
+  const datos = recogerDatos();
+  
+  if (!datos) return;
+  const parte = new Parte(
+    ticket.titulo,
+    ticket.cliente,
+    ticket.descripcion,
+    ticket.localicacion,
+    ticket.empleados,
+    ticket.prioridad,
+    ticket.estado,
+    datos.get("fecha"),
+    datos.get("horas"),
+    datos.get("materialUtilizado"),
+  );
 
     await guardarParte(parte);
+}
+
+function rellenarDate() {
+  let fecha = new Date().toISOString().split("T")[0];
+  $("#fecha").val(fecha);
 }
 
 function recogerDatos() {
