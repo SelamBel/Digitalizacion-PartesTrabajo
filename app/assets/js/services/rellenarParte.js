@@ -98,7 +98,7 @@ async function guardarParte() {
       fecha: Timestamp.fromDate(new Date(fecha)),
       horas: Number(horas),
       materialUtilizado: materialUtilizado,
-      estado: "pendiente",
+      estado: "completado",
       creadoEn: Timestamp.now()
     });
 

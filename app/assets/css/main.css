@@ -191,6 +191,11 @@ tr:hover {
     background-color: var(--color-estado);
 }
 
+.completado {
+    --color-estado: green;
+    background-color: var(--color-estado);
+}
+
 .rechazado {
     --color-estado: lightcoral;
     background-color: var(--color-estado);
