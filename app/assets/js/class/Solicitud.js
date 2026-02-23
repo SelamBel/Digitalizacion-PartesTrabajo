@@ -1,7 +1,12 @@
+import { Cliente } from "../class/Cliente.js";
 export class Solicitud {
   constructor(titulo, cliente, descripcion, localicacion) {
     this._titulo = titulo;
-    this._cliente = cliente;
+    this._cliente = new Cliente(
+      cliente.nombre,
+      cliente.telefono,
+      cliente.correo,
+    );
     this._descripcion = descripcion;
     this._localicacion = localicacion;
   }
@@ -23,6 +28,12 @@ export class Solicitud {
 
   set cliente(valor) {
     this._cliente = valor;
+  }
+
+  clienteTXT() {
+    let txt = `Nombre: ${this._cliente.nombre}\nTlf: ${this._cliente.telefono}\nCorreo: ${this._cliente.correo}`;
+
+    return txt;
   }
 
   // Getter y Setter para descripcion

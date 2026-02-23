@@ -1,5 +1,6 @@
 import { Ticket } from "../class/Ticket.js";
 import { Parte } from "../class/Parte.js";
+import { Cliente } from "../class/Cliente.js";
 
 let ticket;
 
@@ -13,9 +14,14 @@ function rellenarConTicket() {
     //TODO: DATOS DE EJEMPLO. BORRAR CUANDO SE TENGA ACCESO A BASE DE DATOS
     const empleados = ["Sel", "Mangel"];
     const totalEmpleados = ["Sel", "Mangel", "Edel", "Rafa", "Dani"];
-    ticket = new Ticket(1, 1, "titulo", "cliente", "descripcion", "localizacion", empleados, 2, "hecha");
+    const cliente = new Cliente("Pepe Carlo", "622942844", "pepe@correo.com");
 
-    $("#descripcionCliente").val(ticket.clienteNombre);
+    ticket = new Ticket("Titulo de problema problematico", cliente, "Descripción de la movida", "Mi casa chula", empleados, 2, "hecha");
+
+    console.log(ticket);
+    
+
+    $("#descripcionCliente").val(ticket.clienteTXT());
     $("#titulo").val(ticket.tituloSolicitud);
     $("#descripcionSolicitud").val(ticket.descripcionSolicitud);
     $("#localizacion").val(ticket.localicacionSolicitud);
