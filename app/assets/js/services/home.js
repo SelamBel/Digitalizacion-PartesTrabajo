@@ -61,7 +61,7 @@ async function cargarTickets(uid) {
 
             fila.on("click", () => {
                 localStorage.setItem("ticketSeleccionado", JSON.stringify({ id: doc.id, ...t }));
-                window.location.href = "detalle-reporte.html";
+                window.location.href = "detalle-ticket.html";
             });
 
             tbody.append(fila);
