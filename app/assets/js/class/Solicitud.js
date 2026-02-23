@@ -37,29 +37,29 @@ export class Solicitud {
   }
 
   // Getter y Setter para descripcion
-  get descripcionSolicitud() {
+  get descripcion() {
     return this._descripcion;
   }
 
-  set descripcionSolicitud(valor) {
+  set descripcion(valor) {
     this._descripcion = valor;
   }
 
   // Getter y Setter para localicacion
-  get localicacionSolicitud() {
+  get localicacion() {
     return this._localicacion;
   }
 
-  set localicacionSolicitud(valor) {
+  set localicacion(valor) {
     this._localicacion = valor;
   }
 
   // Getter y Setter para titulo
-  get tituloSolicitud() {
+  get titulo() {
     return this._titulo;
   }
 
-  set tituloSolicitud(valor) {
+  set titulo(valor) {
     this._titulo = valor;
   }
 }

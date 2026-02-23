@@ -2,11 +2,18 @@
 import { Solicitud } from "../class/Solicitud.js";
 import { Cliente } from "../class/Cliente.js";
 
-$("#cancelar_solicitud").click(function () {
-  window.location.href = "../index.html";
+$(document).ready(function () {
+  $("#form_solicitud").on("submit", function (e) {
+    recogerSolicitud(e);
+  });
+  $("#cancelar_solicitud").on("click", cancelarParte);
 });
 
-$("#form_solicitud").on("submit", function (e) {
+function cancelarParte() {
+  window.location.href = "../index.html";
+}
+
+function recogerSolicitud(e) {
   e.preventDefault();
 
   const datos = recogerDatos();
@@ -28,7 +35,7 @@ $("#form_solicitud").on("submit", function (e) {
 
   console.log(cliente);
   console.log(solicitud);
-});
+}
 
 function recogerDatos() {
   const nombre = $("#nombre").val().trim();
@@ -43,7 +50,7 @@ function recogerDatos() {
     return;
   }
 
-  if (nombre.trim().length < 3) {
+  if (nombre.length < 3) {
     alert("El nombre debe tener al menos 3 caracteres");
     return;
   }
@@ -58,17 +65,17 @@ function recogerDatos() {
     return;
   }
 
-  if (titulo.trim().length < 10) {
+  if (titulo.length < 10) {
     alert("El título debe ser más explicativo (mínimo 10 caracteres)");
     return;
   }
 
-  if (descripcion.trim().length < 15) {
+  if (descripcion.length < 15) {
     alert("La descripción debe tener al menos 15 caracteres");
     return;
   }
 
-  if (localizacion.trim().length < 5) {
+  if (localizacion.length < 5) {
     alert("La localización no parece válida");
     return;
   }

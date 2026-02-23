@@ -217,8 +217,7 @@ La estructura html es la siguiente:
 */
 .response {
     display: none;
-    width: 100%;
-    max-width: 600px;
+    position: relative;
     margin: 1em auto;
     padding: 20px;
     background-color: var(--succes);
