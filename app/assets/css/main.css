@@ -170,6 +170,12 @@ tr:hover {
     min-width: 80px;
 }
 
+.en_proceso {
+    --color-estado: rgb(255, 246, 122);
+    background-color: var(--color-estado);
+    color: var(--black);
+}
+
 .pendiente {
     --color-estado: lightsalmon;
     background-color: var(--color-estado);
