@@ -212,7 +212,8 @@ select:focus {
 }
 
 form input[type="submit"],
-form button {
+form button,
+form .button {
     margin-top: 20px;
     width: 100%;
     padding: 12px;
@@ -237,12 +238,18 @@ button:hover {
 
 .botones {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 12px;
     margin-top: 20px;
 }
 
+a.button {
+    text-align: center;
+    text-decoration: none;
+}
+
 .botones button,
+.botones .button,
 .botones input[type="submit"] {
     flex: 1;
     margin-top: 0;

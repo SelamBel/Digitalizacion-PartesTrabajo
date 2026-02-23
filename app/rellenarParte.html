@@ -14,6 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="assets/js/services/header-footer.js"></script>
     <script src="assets/js/services/themes.js"></script>
+    <script src="assets/js/services/rellenarParte.js" type="module"></script>
 </head>
 
 <body>
@@ -24,24 +25,20 @@
             <form>
                 <fieldset>
                     <label for="cliente">Cliente</label>
-                    <textarea id="descripcion" rows="2" placeholder="Datos del cliente" disabled></textarea>
+                    <textarea id="descripcionCliente" rows="2" value="Datos del cliente" disabled></textarea>
 
                     <label for="titulo">Título de la solicitud</label>
-                    <input type="text" id="titulo" name="titulo" placeholder="Ej: Reparación impresora" disabled>
+                    <input type="text" id="titulo" name="titulo" value="Ej: Reparación impresora" disabled>
 
                     <label for="descripcion">Descripción de la solicitud</label>
-                    <textarea id="descripcion" rows="4" placeholder="Describe el problema o tarea" disabled></textarea>
+                    <textarea id="descripcionSolicitud" rows="4" value="Describe el problema o tarea"
+                        disabled></textarea>
 
                     <label for="localizacion">Localización de el problema</label>
-                    <input type="text" id="localizacion" name="localizacion"
-                        placeholder="Ej: Calle Reyes Católicos 5 Puerta 2" disabled>
+                    <input type="text" id="localizacion" name="localizacion" disabled>
 
                     <label for="empleado">Asignar a empleado</label>
                     <select id="empleado" name="empleado" multiple disabled>
-                        <option value="1">Juan Pérez</option>
-                        <option value="2">María López</option>
-                        <option value="3">Carlos García</option>
-                        <option value="4">Ana Torres</option>
                     </select>
 
                     <label for="fecha">Fecha:</label>
@@ -49,14 +46,14 @@
 
                     <label for="horas">Horas trabajadas:</label>
                     <input type="number" name="horas" id="horas"><br>
-                    
+
                     <label for="material">Material utilizado:</label>
-                    <textarea rows="5"></textarea><br>
+                    <textarea id="materialUtilizado" rows="5"></textarea><br>
                 </fieldset>
 
                 <div class="botones">
-                    <button type="button" class="cancelar">Cancelar</button>
-                    <input type="submit" value="Guardar">
+                    <a class="button" href="./home.html">Cancelar</a>
+                    <button type="button" id="submitParte" class="button">Guardar</button>
                 </div>
 
             </form>
