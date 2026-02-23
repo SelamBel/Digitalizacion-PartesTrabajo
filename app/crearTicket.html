@@ -14,7 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="assets/js/services/header-footer.js" type="module"></script>
     <script src="assets/js/services/themes.js"></script>
-
+    <script type="module" src="assets/js/services/crearTicket.js"></script>
 </head>
 
 <body>
@@ -22,11 +22,10 @@
     <div class="header-container"></div>
 
     <main>
-        <form>
+        <form id="form_ticket">
             <fieldset>
-
                 <label for="cliente">Cliente</label>
-                <textarea id="descripcion" rows="2" placeholder="Datos del cliente" disabled></textarea>
+                <textarea id="datosCliente" rows="2" placeholder="Datos del cliente" disabled></textarea>
 
                 <label for="titulo">Título de la solicitud</label>
                 <input type="text" id="titulo" name="titulo" placeholder="Ej: Reparación impresora" disabled>
@@ -37,7 +36,6 @@
                 <label for="localizacion">Localización de el problema</label>
                 <input type="text" id="localizacion" name="localizacion"
                     placeholder="Ej: Calle Reyes Católicos 5 Puerta 2" disabled>
-
                 <label for="empleado">Asignar a empleado</label>
                 <select id="empleado" name="empleado" multiple>
                     <option value="1">Juan Pérez</option>
