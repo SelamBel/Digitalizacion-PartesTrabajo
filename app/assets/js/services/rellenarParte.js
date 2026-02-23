@@ -17,6 +17,7 @@ let ticket = new Ticket(
 );
 
 $(document).ready(function () {
+  rellenarDate();
   rellenarConTicket();
   $("#form_partes").on("submit", function (e) {
     recogerParte(e);
@@ -51,7 +52,7 @@ function recogerParte(e) {
   e.preventDefault();
 
   const datos = recogerDatos();
-
+  if (!datos) return;
   const parte = new Parte(
     ticket.titulo,
     ticket.cliente,
@@ -66,6 +67,11 @@ function recogerParte(e) {
   );
 
   console.log(parte);
+}
+
+function rellenarDate() {
+  let fecha = new Date().toISOString().split("T")[0];
+  $("#fecha").val(fecha);
 }
 
 function recogerDatos() {
