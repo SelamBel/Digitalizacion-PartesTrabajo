@@ -13,3 +13,4 @@ $(document).ready(function() {
 
     $(".footer-container").load("assets/header-footer/footer.html");
 });
+

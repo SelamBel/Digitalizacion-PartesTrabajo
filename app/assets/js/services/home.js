@@ -1,6 +1,10 @@
 // assets/js/services/home.js
 import { obtenerNombreUsuario } from "../firebase/userService.js";
 
+$(document).ready(function () {
+    rellenarTabla(reportes);
+});
+
 obtenerNombreUsuario((nombre) => {
     if (nombre) {
         document.title = `Home - ${nombre}`;
@@ -58,4 +62,3 @@ function rellenarTabla(datos) {
     });
 }
 
-rellenarTabla(reportes);

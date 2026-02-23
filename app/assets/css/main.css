@@ -90,7 +90,7 @@ ul {
 
 
 #btnCerrarSesion:hover {
-    background-color:var(--logout-button-hover);
+    background-color: var(--logout-button-hover);
 }
 
 #liBtnCambiarTema ul:not(:first-child) {
@@ -228,7 +228,8 @@ textarea {
     resize: none;
 }
 
-input[disabled], *[disabled]{
+input[disabled],
+*[disabled] {
     background-color: var(--background-input-disabled);
 }
 
@@ -289,7 +290,7 @@ a.button {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 70px;
+    height: 2rem;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -300,13 +301,6 @@ a.button {
     height: 100%;
     background-color: var(--principal);
     position: relative;
-    --circle-radius: 45px;
-    -webkit-mask-image: radial-gradient(circle var(--circle-radius) at 50% 0, transparent 98%, black 100%);
-    mask-image: radial-gradient(circle var(--circle-radius) at 50% 0, transparent 98%, black 100%);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center top;
-    mask-position: center top;
 }
 
 .footer-center {
@@ -336,6 +330,23 @@ a.button {
     background-color: var(--button-hover);
 }
 
-     .detalle-container { max-width: 600px; margin: 50px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: var(--bg-color, white); }
-        .campo { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        label { font-weight: bold; color: #555; display: block; }
+.detalle-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: var(--bg-color, white);
+}
+
+.campo {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+    display: block;
+}
