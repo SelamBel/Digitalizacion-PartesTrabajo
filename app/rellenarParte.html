@@ -21,11 +21,10 @@
 
     <div class="header-container"></div>
     <main>
-        <div class="reportes">
-            <form>
+            <form id="form_partes">
                 <fieldset>
                     <label for="cliente">Cliente</label>
-                    <textarea id="descripcionCliente" rows="2" value="Datos del cliente" disabled></textarea>
+                    <textarea id="descripcionCliente" rows="3" value="Datos del cliente" disabled></textarea>
 
                     <label for="titulo">Título de la solicitud</label>
                     <input type="text" id="titulo" name="titulo" value="Ej: Reparación impresora" disabled>
@@ -50,14 +49,17 @@
                     <label for="material">Material utilizado:</label>
                     <textarea id="materialUtilizado" rows="5"></textarea><br>
                 </fieldset>
+                
+                <div class="response"> <i class="fa-regular fa-circle-check"></i> Datos recogidos con exito</div>
 
                 <div class="botones">
-                    <a class="button" href="./home.html">Cancelar</a>
-                    <button type="button" id="submitParte" class="button">Guardar</button>
+                    <button type="button" id="cancelarParte" class="cancelar">
+                      Cancelar
+                    </button>
+                    <input type="submit" id="submitParte" class="button" value="Guardar">
                 </div>
 
             </form>
-        </div>
     </main>
 
     <div class="footer-container"></div>
