@@ -38,7 +38,20 @@
 }
 
 :root.dani {
+    --principal: rgb(57, 149, 165);
+    --principal-dark: rgb(19, 95, 109);
+    --principal-light: rgb(24, 37, 153);
 
+    --background: rgb(150, 150, 150);
+    --background-main: rgb(197, 197, 197);
+    --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
+    --background-form: rgb(180, 180, 180);
+    --background-input: var(--white );
+    --font-color-title: var(--white);
+    --font-color-main: var(--black);
+    --button-hover: rgb(4, 64, 75);
+    --white: #f1f1f1;
+    --black: #333;
 }
 
 :root.rafa {
@@ -46,7 +59,22 @@
 }
 
 :root.edel {
+    --principal: rgb(176, 94, 120);
+    --principal-dark: rgb(120, 63, 82);
+    --principal-light: rgb(210, 170, 180);
 
+    --background: rgb(235, 225, 220);
+    --background-main: rgb(245, 238, 234);
+    --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
+    --background-form: rgb(250, 244, 240);
+    --background-input: rgb(255, 252, 250);
+    --font-color-title: rgb(255, 248, 245);
+    --font-color-main: rgb(70, 58, 60);
+    --button-hover: rgb(150, 75, 100);
+    --white: rgb(255, 250, 248);
+    --black: rgb(40, 40, 40);
+    --logout-button: rgb(120, 63, 82);
+    --logout-button-hover: rgb(150, 75, 100);
 }
 
 :root.mangel {
