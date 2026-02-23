@@ -52,13 +52,3 @@ export class Solicitud {
     this._titulo = valor;
   }
 }
-
-/**
- * Se usa el prefijo `_` por convención para indicar que la propiedad es “privada”.
- * Los getters y setters se acceden **como propiedades**, no como funciones:
- *
- * const ticket = new Ticket(1, "Error", "No carga", "Alta", "Abierto")
- *
- * console.log(ticket.titulo)   // getter
- * ticket.estado = "Cerrado"    // setter
- */
