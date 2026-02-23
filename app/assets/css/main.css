@@ -40,15 +40,30 @@ ul {
 }
 
 #liBtnCambiarTema {
-    box-shadow: 0px 0px 2px 2px var(--principal-dark);
     background-color: var(--principal-dark);
+    padding: 5px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+#btnCerrarSesion{
+    background-color: var(--logout-button);
+    border: none;
+    padding: 10px;
+    right: 10px;
+    top: 13px;
+}
+
+#liBtnCambiarTema,
+#btnCerrarSesion{
+    box-shadow: 0px 0px 2px 2px var(--principal-dark);
+    border: none;
+    color: white;
     display: flex;
     flex-direction: column;
-    padding: 5px;
     border-radius: 8px;
     position: absolute;
-    right: 10px;
-    top: 10px;
 }
 
 #liBtnCambiarTema ul:not(:first-child) {
@@ -229,6 +244,7 @@ select:focus {
 }
 
 form input[type="submit"],
+.button,
 form button,
 form .button {
     margin-top: 20px;
@@ -322,3 +338,7 @@ a.button {
     transform: scale(1.15);
     background-color: var(--button-hover);
 }
+
+     .detalle-container { max-width: 600px; margin: 50px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: var(--bg-color, white); }
+        .campo { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        label { font-weight: bold; color: #555; display: block; }
