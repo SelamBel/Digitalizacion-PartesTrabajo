@@ -179,13 +179,9 @@ label {
     color: var(--font);
 }
 
-input[type="text"],
-input[type="number"],
-input[type="date"],
-input[type="password"],
-input[type="email"],
+input,
 textarea,
-select {
+select{
     width: 100%;
     padding: 10px;
     border-radius: 8px;
@@ -193,6 +189,27 @@ select {
     font-size: 1rem;
     box-sizing: border-box;
     background-color: var(--background-input);
+}
+
+/* 
+Esta clase es para un div que funciona como respuesta
+Solo se contempla de exito, ya que los errores se manejan por alert
+La estructura html es la siguiente:
+
+<div class="response">
+    <i class="fa-regular fa-circle-check"></i> Datos recogidos con exito
+</div>
+*/
+.response {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    margin: 1em auto;
+    padding: 20px;
+    background-color: var(--succes);
+    border: 2px solid var(--succes-borde);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 textarea {
