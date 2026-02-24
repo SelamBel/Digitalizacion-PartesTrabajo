@@ -55,7 +55,22 @@
 }
 
 :root.rafa {
+    --principal: rgb(138, 43, 226);
+    --principal-dark: rgb(75, 0, 130);
+    --principal-light: rgb(191, 148, 255);
 
+    --background: rgb(30, 20, 50);
+    --background-main: rgb(45, 30, 70);
+    --background-login: linear-gradient(rgb(75, 0, 130), rgb(20, 10, 30));
+    --background-form: rgb(60, 45, 90);
+    --background-input: rgb(255, 255, 255);
+    --font-color-title: rgb(240, 230, 255);
+    --font-color-main: rgb(210, 190, 235);
+    --button-hover: rgb(155, 70, 255);
+    --white: rgb(210, 190, 235);
+    --black: rgb(15, 5, 25);
+    --logout-button: rgb(120, 30, 150);
+    --logout-button-hover: rgb(180, 50, 200);
 }
 
 :root.edel {
@@ -78,21 +93,21 @@
 }
 
 :root.mangel {
-    --principal: rgb(176, 140, 94);
-    --principal-dark: rgb(0, 0, 0);
-    --principal-light: rgb(0, 123, 239);
+    --principal: rgb(210, 180, 140);
+    --principal-dark: rgb(139, 115, 85);
+    --principal-light: rgb(147, 123, 90);
 
-    --background: rgb(109, 63, 39);
-    --background-main: rgb(255, 230, 128);
-    --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
-    --background-form: rgb(255, 0, 140);
-    --background-input: rgb(255, 0, 230);
-    --font-color-title: rgb(0, 0, 0);
-    --font-color-main: rgb(70, 58, 60);
-    --button-hover: rgb(75, 134, 150);
-    --white: rgb(106, 104, 104);
-    --black: rgb(255, 200, 200);
-    --logout-button: rgb(120, 63, 82);
-    --logout-button-hover: rgb(255, 12, 93);
+    --background: rgb(225, 218, 196);
+    --background-main: rgb(250, 248, 239);
+    --background-login: linear-gradient(rgb(210, 180, 140), rgb(245, 245, 220));
+    --background-form: rgb(255, 255, 255);
+    --background-input: rgb(245, 242, 230);
+    --font-color-title: rgb(75, 54, 33);
+    --font-color-main: rgb(92, 75, 60);
+    --button-hover: rgb(188, 158, 130);
+    --white: rgb(255, 255, 255);
+    --black: rgb(43, 34, 26);
+    --logout-button: rgb(176, 140, 94);
+    --logout-button-hover: rgb(150, 120, 80);
 }
 
