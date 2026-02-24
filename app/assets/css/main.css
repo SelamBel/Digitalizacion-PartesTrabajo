@@ -272,22 +272,28 @@ input[disabled],
     background-color: var(--background-input-disabled);
 }
 
-select[multiple]:disabled option:checked {
-    background-color: var(--button-hover) !important;
-    color: white !important;
-}
-
-select[multiple]::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 6px;
+    height: 6px;
 }
 
-select[multiple]::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: transparent;
 }
 
-select[multiple]::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: var(--principal);
     border-radius: 10px;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--principal) transparent;
+}
+
+select[multiple]:disabled option:checked {
+    background-color: var(--button-hover) !important;
+    color: white !important;
 }
 
 input:focus,
@@ -347,6 +353,22 @@ a.button {
 .botones input[type="submit"] {
     flex: 1;
     margin-top: 0;
+}
+
+
+
+.tabla-detalle td {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+table td {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
