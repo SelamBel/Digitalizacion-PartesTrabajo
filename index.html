@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="app/assets/css/main.css">
+    <link rel="stylesheet" href="app/assets/css/tema.css">
     <link rel="stylesheet" href="app/assets/css/login.css">
-    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
-    <script type="module" src="app/assets/js/main.js"></script>
 
+    <script type="module" src="app/assets/js/firebase/auth.js"></script>
+    <script src="app/assets/js/services/themes.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 </head>
 
 <body>
@@ -20,8 +22,8 @@
     <div class="login-container">
         <h2>Iniciar Sesión</h2>
         <form method="post">
-            <label for="usuario">Usuario:</label>
-            <input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
 
             <label for="password">Contraseña:</label>
             <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
@@ -30,13 +32,12 @@
         </form>
 
         <div class="links">
-            <a href="#">¿Olvidaste tu contraseña?</a> | <a href="#">Registrarse</a>
+            <a href="#">¿Olvidaste tu contraseña?</a> | <a href="app/register.html">Registrarse</a>
         </div>
 
         <div class="links">
-            <a href="./app/crearTicket.html">Crear Ticket</a> | <a href="./app/home.html">Home</a> <br> <a href="./app/homeAdmin.html">HomeAdmin</a> | <a href="./app/rellenarParte.html">RellenarParte</a>
+            <a href="./app/crearSolicitud.html">Crear solicitud</a>
         </div>
-        
     </div>
 
 </body>

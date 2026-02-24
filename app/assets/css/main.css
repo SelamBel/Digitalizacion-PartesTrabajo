@@ -1,14 +1,5 @@
-:root {
-    --principal: rgb(10, 117, 107);
-    --principal-dark: rgb(2, 95, 86);
-    --principal-light: rgb(100, 197, 182);
-    --background: var(--white);
-    --background-main: white;
-    --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
-    --font-color-title: var(--white);
-    --font-color-main: #333;
-    --button-hover: goldenrod;
-    --white: #f1f1f1;
+* {
+    transition: background-color 0.5s ease;
 }
 
 body {
@@ -19,6 +10,8 @@ body {
     background-attachment: fixed;
     color: var(--font-color-main);
 }
+
+/* Header */
 
 header {
     background-color: var(--principal);
@@ -31,6 +24,8 @@ header {
     display: flex;
     align-items: center;
     height: 50px;
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
 
 header>h1 {
@@ -47,15 +42,57 @@ ul {
 }
 
 #liBtnCambiarTema {
-    box-shadow: 0px 0px 2px 2px var(--principal-dark);
     background-color: var(--principal-dark);
+    padding: 5px;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    left: 10px;
+    top: 10px;
+    border: none;
+    color: white;
+    border-radius: 8px;
+}
+
+#liBtnCambiarTema ul {
+    width: 100%;
+}
+
+.btnCambiarTema,
+#btnCerrarSesion {
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    margin: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.btnCambiarTema {
+    background-color: var(--principal-dark);
+    flex-grow: 1;
+    width: 100%;
+    margin: 0;
+
+}
+
+
+#btnCerrarSesion {
+    background-color: var(--logout-button);
+    border: none;
+    right: 10px;
+    transition: all 0.3s ease;
     border-radius: 8px;
     position: absolute;
-    right: 10px;
-    top: 3px;
+}
+
+
+#btnCerrarSesion:hover {
+    background-color: var(--logout-button-hover);
 }
 
 #liBtnCambiarTema ul:not(:first-child) {
@@ -72,19 +109,6 @@ ul {
 }
 
 
-#liBtnCambiarTema .btnCambiarTema {
-    background-color: var(--principal-dark);
-    border: none;
-    color: white;
-    padding: 8px 10px;
-    margin: 0;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
 #liBtnCambiarTema .btnCambiarTema ul {
     text-align: center;
 }
@@ -93,12 +117,15 @@ ul {
     background-color: var(--button-hover);
 }
 
+
+/* MAIN */
+
 main {
     position: fixed;
-    top: 70px;
+    top: 80px;
     left: 15px;
     right: 15px;
-    bottom: 110px;
+    bottom: 3.5rem;
     padding: 20px;
     overflow-y: auto;
     background-color: var(--background-main);
@@ -136,27 +163,42 @@ tr:hover {
 .estado {
     padding: 5px 12px;
     border-radius: 20px;
-    color: white;
+    color: black;
     font-weight: bold;
     display: inline-block;
     text-align: center;
     min-width: 80px;
 }
 
+.en_proceso {
+    --color-estado: rgb(255, 246, 122);
+    background-color: var(--color-estado);
+    color: var(--black);
+}
+
 .pendiente {
-    background-color: lightsalmon;
+    --color-estado: lightsalmon;
+    background-color: var(--color-estado);
 }
 
 .enviado {
-    background-color: lightskyblue;
+    --color-estado: lightskyblue;
+    background-color: var(--color-estado);
 }
 
 .aprobado {
-    background-color: lightgreen;
+    --color-estado: lightgreen;
+    background-color: var(--color-estado);
+}
+
+.completado {
+    --color-estado: green;
+    background-color: var(--color-estado);
 }
 
 .rechazado {
-    background-color: lightcoral;
+    --color-estado: lightcoral;
+    background-color: var(--color-estado);
 }
 
 form {
@@ -164,7 +206,7 @@ form {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: var(--white);
+    background-color: var(--background-form);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -182,22 +224,67 @@ label {
     color: var(--font);
 }
 
-input[type="text"],
-input[type="number"],
-input[type="date"],
-input[type="password"],
+input,
 textarea,
-select {
+select{
     width: 100%;
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 1rem;
     box-sizing: border-box;
+    background-color: var(--background-input);
+}
+
+select {
+    padding: 0;
+}
+
+/* 
+Esta clase es para un div que funciona como respuesta
+Solo se contempla de exito, ya que los errores se manejan por alert
+La estructura html es la siguiente:
+
+<div class="response">
+    <i class="fa-regular fa-circle-check"></i> Datos recogidos con exito
+</div>
+*/
+.response {
+    display: none;
+    position: relative;
+    margin: 1em auto;
+    padding: 20px;
+    background-color: var(--succes);
+    border: 2px solid var(--succes-borde);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 textarea {
-    resize: vertical;
+    resize: none;
+}
+
+input[disabled],
+*[disabled] {
+    background-color: var(--background-input-disabled);
+}
+
+select[multiple]:disabled option:checked {
+    background-color: var(--button-hover) !important;
+    color: white !important;
+}
+
+select[multiple]::-webkit-scrollbar {
+    width: 6px;
+}
+
+select[multiple]::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+select[multiple]::-webkit-scrollbar-thumb {
+    background-color: var(--principal);
+    border-radius: 10px;
 }
 
 input:focus,
@@ -205,11 +292,19 @@ textarea:focus,
 select:focus {
     outline: none;
     border-color: var(--principal);
+    color: var(--font-color-main);
     box-shadow: 0 0 0 2px var(--principal-dark);
 }
 
+option {
+    padding: 7px;
+    padding-left: 10px;
+}
+
 form input[type="submit"],
-form button {
+.button,
+form button,
+form .button {
     margin-top: 20px;
     width: 100%;
     padding: 12px;
@@ -234,22 +329,33 @@ button:hover {
 
 .botones {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 12px;
     margin-top: 20px;
 }
 
+a.button {
+    text-align: center;
+    text-decoration: none;
+}
+
 .botones button,
+.botones .button,
 .botones input[type="submit"] {
     flex: 1;
     margin-top: 0;
 }
 
+
+
+
+/* FOOTER */
+
 .footer-container {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 70px;
+    height: 2rem;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -260,13 +366,6 @@ button:hover {
     height: 100%;
     background-color: var(--principal);
     position: relative;
-    --circle-radius: 45px;
-    -webkit-mask-image: radial-gradient(circle var(--circle-radius) at 50% 0, transparent 98%, black 100%);
-    mask-image: radial-gradient(circle var(--circle-radius) at 50% 0, transparent 98%, black 100%);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center top;
-    mask-position: center top;
 }
 
 .footer-center {
@@ -294,4 +393,25 @@ button:hover {
 .circle:hover {
     transform: scale(1.15);
     background-color: var(--button-hover);
+}
+
+.detalle-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: var(--bg-color, white);
+}
+
+.campo {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+    display: block;
 }
