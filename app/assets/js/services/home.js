@@ -52,15 +52,16 @@ async function cargarTickets(uid) {
         querySnapshot.forEach((doc) => {
             const t = doc.data();
             const fecha = t.creadoEn.toDate().toLocaleDateString("es-ES");
+            const estadoFormateado = t.estado.replace(/_/g, " ");
 
             const fila = $(`
-                <tr style="cursor:pointer">
-                    <td>${fecha}</td>
-                    <td>${t.titulo}</td>
-                    <td>${t.descripcion}</td>
-                    <td>${t.localizacion}</td>
-                    <td><span class="estado ${t.estado}">${t.estado}</span></td>
-                </tr>
+            <tr style="cursor:pointer">
+            <td>${fecha}</td>
+            <td>${t.titulo}</td>
+            <td class="desaparecer">${t.descripcion}</td>
+            <td>${t.localizacion}</td>
+            <td class="desaparecer"><span class="estado ${t.estado}">${estadoFormateado}</span></td>
+            </tr>
             `);
 
             fila.on("click", () => {
@@ -100,15 +101,16 @@ async function cargarPartes(uid) {
         querySnapshot.forEach((doc) => {
             const p = doc.data();
             const fecha = p.creadoEn.toDate().toLocaleDateString("es-ES");
+            const estadoFormateado = p.estado.replace(/_/g, " ");
 
             const fila = $(`
                 <tr style="cursor:pointer">
                     <td>${fecha}</td>
                     <td>${p.titulo}</td>
                     <td>${p.localizacion}</td>
-                    <td>${p.horas}</td>
-                    <td>${p.materialUtilizado}</td>
-                    <td><span class="estado ${p.estado}">${p.estado}</span></td>
+                    <td class="desaparecer">${p.horas}</td>
+                    <td class="desaparecer">${p.materialUtilizado}</td>
+                    <td class="desaparecer"><span class="estado ${p.estado}">${p.estado}</span></td>
                 </tr>
             `);
 

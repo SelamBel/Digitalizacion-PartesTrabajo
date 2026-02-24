@@ -7,8 +7,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    table th:nth-child(3), table td:nth-child(3),
-    table th:nth-child(5), table td:nth-child(5) {
+    .desaparecer {
         display: none;
     }
 
@@ -27,9 +26,9 @@ body {
         background-color: var(--color-estado, #ccc);
     }
 
-    table tr:has(.borrador)  { --color-estado: rgb(151, 151, 151); }
     table tr:has(.pendiente) { --color-estado: lightsalmon; }
-    table tr:has(.enviado)   { --color-estado: lightskyblue; }
-    table tr:has(.aprobado)  { --color-estado: lightgreen; }
+    table tr:has(.aprobado)  { --color-estado: #36c436; }
     table tr:has(.rechazado) { --color-estado: lightcoral; }
+    table tr:has(.en_proceso)  { --color-estado: #fff67a; }
+    table tr:has(.completado)  { --color-estado: #164616; }
 }
