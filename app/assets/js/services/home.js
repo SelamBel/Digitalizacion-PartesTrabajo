@@ -10,8 +10,11 @@ obtenerNombreUsuario((nombre) => {
         const headerTitle = document.getElementById("headerTitle");
         if (headerTitle) headerTitle.textContent = `Home - ${nombre}`;
 
-        const saludo = document.querySelector("main h2");
-        if (saludo) saludo.textContent = `Tickets asignados a ${nombre}`;
+        const saludo = $("#tit-tickets");
+        if (saludo) saludo.text('Tickets asignados a ' + nombre);
+
+        const saludo2 = $("#tit-partes");
+        if (saludo2) saludo2.text('Partes de ' + nombre);
     }
 });
 
@@ -21,6 +24,7 @@ $(document).ready(function () {
             window.location.href = "../index.html";
         } else {
             cargarTickets(user.uid);
+            cargarPartes(user.uid);
         }
     });
 });
@@ -33,7 +37,7 @@ async function cargarTickets(uid) {
         );
         const querySnapshot = await getDocs(q);
 
-        const tbody = $("table tbody");
+        const tbody = $("#tabla-tickets tbody");
         tbody.empty();
 
         if (querySnapshot.empty) {
@@ -69,5 +73,56 @@ async function cargarTickets(uid) {
 
     } catch (error) {
         console.error("Error al cargar tickets:", error);
+    }
+}
+
+async function cargarPartes(uid) {
+    try {
+        const q = query(
+            collection(db, "partes"),
+            where("empleadoUid", "==", uid)
+        );
+
+        const querySnapshot = await getDocs(q);
+
+        const tbody = $("#tabla-partes tbody");
+        tbody.empty();
+
+        if (querySnapshot.empty) {
+            tbody.append(`
+                <tr>
+                    <td colspan="6">No tienes partes asignados</td>
+                </tr>
+            `);
+            return;
+        }
+
+        querySnapshot.forEach((doc) => {
+            const p = doc.data();
+            const fecha = p.creadoEn.toDate().toLocaleDateString("es-ES");
+
+            const fila = $(`
+                <tr style="cursor:pointer">
+                    <td>${fecha}</td>
+                    <td>${p.titulo}</td>
+                    <td>${p.localizacion}</td>
+                    <td>${p.horas}</td>
+                    <td>${p.materialUtilizado}</td>
+                    <td><span class="estado ${p.estado}">${p.estado}</span></td>
+                </tr>
+            `);
+
+            fila.on("click", () => {
+                localStorage.setItem("parteSeleccionado", JSON.stringify({ id: doc.id, ...p }));
+                window.location.href = "detalle-parte.html";
+            });
+
+            tbody.append(fila);
+        });
+
+
+
+    } catch (error) {
+        console.error("Error al cargar partes:", error);
     }
 }
