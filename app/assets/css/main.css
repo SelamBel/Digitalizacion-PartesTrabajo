@@ -239,7 +239,7 @@ select{
     background-color: var(--background-input);
 }
 
-select {
+select[multiple] {
     padding: 0;
 }
 
