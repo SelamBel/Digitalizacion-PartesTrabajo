@@ -78,6 +78,21 @@
 }
 
 :root.mangel {
+    --principal: rgb(176, 140, 94);
+    --principal-dark: rgb(0, 0, 0);
+    --principal-light: rgb(0, 123, 239);
 
+    --background: rgb(109, 63, 39);
+    --background-main: rgb(255, 230, 128);
+    --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
+    --background-form: rgb(255, 0, 140);
+    --background-input: rgb(255, 0, 230);
+    --font-color-title: rgb(0, 0, 0);
+    --font-color-main: rgb(70, 58, 60);
+    --button-hover: rgb(75, 134, 150);
+    --white: rgb(106, 104, 104);
+    --black: rgb(255, 200, 200);
+    --logout-button: rgb(120, 63, 82);
+    --logout-button-hover: rgb(255, 12, 93);
 }
 
