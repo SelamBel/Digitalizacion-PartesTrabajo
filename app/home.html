@@ -13,7 +13,7 @@
     <script type="module" src="assets/js/services/home.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    
+
     <script src="assets/js/services/themes.js"></script>
     <script src="assets/js/services/header-footer.js" type="module"></script>
 </head>
@@ -21,56 +21,37 @@
 <body>
     <div class="header-container"></div>
     <main>
-        <h2>Reportes Realizados</h2>
-        <table>
+        <h2 id="tit-tickets">Tickets Asignados</h2>
+        <table id="tabla-tickets">
             <thead>
                 <tr>
                     <th>Fecha</th>
-                    <th>Horas</th>
-                    <th>Material</th>
-                    <th>Cliente</th>
+                    <th>Título</th>
+                    <th>Descripción</th>
+                    <th>Localización</th>
                     <th>Estado</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody></tbody>
+        </table>
+        
+
+        <h2 id="tit-partes">Partes</h2>
+        <table id="tabla-partes">
+            <thead>
                 <tr>
-                    <td>2026/01/14</td>
-                    <td>8</td>
-                    <td>Martillo, Taladro</td>
-                    <td>Cliente 1</td>
-                    <td><span class="estado borrador">Borrador</span></td>
+                    <th>Fecha</th>
+                    <th>Título</th>
+                    <th>Localización</th>
+                    <th>Horas</th>
+                    <th>Material Utilizado</th>
+                    <th>Estado</th>
                 </tr>
-                <tr>
-                    <td>2026/01/13</td>
-                    <td>6</td>
-                    <td>Destornillador</td>
-                    <td>Cliente 2</td>
-                    <td><span class="estado enviado">Enviado</span></td>
-                </tr>
-                <tr>
-                    <td>2026/01/12</td>
-                    <td>7</td>
-                    <td>Taladro</td>
-                    <td>Cliente 3</td>
-                    <td><span class="estado pendiente">Pendiente</span></td>
-                </tr>
-                <tr>
-                    <td>2026/01/11</td>
-                    <td>5</td>
-                    <td>Martillo</td>
-                    <td>Cliente 4</td>
-                    <td><span class="estado aprobado">Aprobado</span></td>
-                </tr>
-                <tr>
-                    <td>2026/01/10</td>
-                    <td>4</td>
-                    <td>Llave inglesa</td>
-                    <td>Cliente 5</td>
-                    <td><span class="estado rechazado">Rechazado</span></td>
-                </tr>
-            </tbody>
+            </thead>
+            <tbody></tbody>
         </table>
     </main>
     <div class="footer-container"></div>
 </body>
+
 </html>

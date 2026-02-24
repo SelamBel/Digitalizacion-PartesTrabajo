@@ -163,7 +163,7 @@ tr:hover {
 .estado {
     padding: 5px 12px;
     border-radius: 20px;
-    color: white;
+    color: black;
     font-weight: bold;
     display: inline-block;
     text-align: center;
@@ -188,6 +188,11 @@ tr:hover {
 
 .aprobado {
     --color-estado: lightgreen;
+    background-color: var(--color-estado);
+}
+
+.completado {
+    --color-estado: green;
     background-color: var(--color-estado);
 }
 

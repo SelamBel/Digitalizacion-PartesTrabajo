@@ -1,127 +1,120 @@
-import { Ticket } from "../class/Ticket.js";
-import { Parte } from "../class/Parte.js";
-import { Cliente } from "../class/Cliente.js";
-import { db } from "../firebase/firebase-config.js";
-import { collection, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { db, auth } from "../firebase/firebase-config.js";
+import { doc, getDoc, addDoc, collection, Timestamp, deleteDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-//TODO: DATOS DE EJEMPLO. BORRAR CUANDO SE TENGA ACCESO A BASE DE DATOS
-const empleados = ["Sel", "Mangel"];
-const totalEmpleados = ["Sel", "Mangel", "Edel", "Rafa", "Dani"];
-const cliente = new Cliente("Pepe Carlo", "622942844", "pepe@correo.com");
-let ticket = new Ticket(
-    "Titulo de problema problematico",
-    cliente,
-    "Descripción de la movida",
-    "Mi casa chula",
-    empleados,
-    2,
-    "hecha",
-);
+let ticketActual = null;
+let usuarioActual = null;
 
 $(document).ready(function () {
-  rellenarDate();
-  rellenarConTicket();
-  $("#form_partes").on("submit", function (e) {
-    recogerParte(e);
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      window.location.href = "../index.html";
+      return;
+    }
+    usuarioActual = user;
+    cargarTicket();
   });
-  $("#cancelarParte").on("click", cancelarParte);
+
+  $("#form_partes").on("submit", function (e) {
+    e.preventDefault();
+    guardarParte();
+  });
+
+  $("#cancelarParte").on("click", function () {
+    window.location.href = "./home.html";
+  });
 });
 
-function rellenarConTicket() {
-    console.log(ticket);
+async function cargarTicket() {
+  const params = new URLSearchParams(window.location.search);
+  const ticketId = params.get("ticketId");
 
-    $("#descripcionCliente").val(ticket.clienteTXT());
-    $("#titulo").val(ticket.titulo);
-    $("#descripcionSolicitud").val(ticket.descripcion);
-    $("#localizacion").val(ticket.localicacion);
+  let ticket = null;
 
-    const select = $("#empleado");
-    select.empty();
-    totalEmpleados.forEach(function (empleado) {
-        const option = $("<option>").val(empleado).text(empleado);
-        if (ticket.empleados.includes(empleado)) {
-            option.prop("selected", true);
-        }
-        select.append(option);
-    });
-}
-
-function cancelarParte() {
-    window.location.href = "./home.html";
-}
-
-async function recogerParte(e) {
-    e.preventDefault();
-
-  const datos = recogerDatos();
-  
-  if (!datos) return;
-  const parte = new Parte(
-    ticket.titulo,
-    ticket.cliente,
-    ticket.descripcion,
-    ticket.localicacion,
-    ticket.empleados,
-    ticket.prioridad,
-    ticket.estado,
-    datos.get("fecha"),
-    datos.get("horas"),
-    datos.get("materialUtilizado"),
-  );
-
-    await guardarParte(parte);
-}
-
-function rellenarDate() {
-  let fecha = new Date().toISOString().split("T")[0];
-  $("#fecha").val(fecha);
-}
-
-function recogerDatos() {
-    const fecha = $("#fecha").val().trim();
-    const horas = $("#horas").val().trim();
-    const materialUtilizado = $("#materialUtilizado").val().trim();
-
-    if (!fecha || !horas || !materialUtilizado) {
-        alert("Por favor, completa todos los campos.");
-        return;
+  if (ticketId) {
+    try {
+      const docSnap = await getDoc(doc(db, "tickets", ticketId));
+      if (docSnap.exists()) {
+        ticket = { id: docSnap.id, ...docSnap.data() };
+      }
+    } catch (error) {
+      console.error("Error al cargar el ticket:", error);
     }
+  } else {
+    const stored = localStorage.getItem("ticketSeleccionado");
+    if (stored) ticket = JSON.parse(stored);
+  }
+
+  if (!ticket) {
+    alert("No se encontró el ticket.");
+    window.location.href = "./home.html";
+    return;
+  }
+
+  ticketActual = ticket;
+  rellenarFormulario(ticket);
+}
+
+async function rellenarFormulario(ticket) {
+  $("#descripcionCliente").val(ticket.datosCliente);
+  $("#titulo").val(ticket.titulo);
+  $("#descripcionSolicitud").val(ticket.descripcion);
+  $("#localizacion").val(ticket.localizacion);
+
+  try {
+    const docSnap = await getDoc(doc(db, "usuarios", usuarioActual.uid));
+    if (docSnap.exists()) {
+      $("#empleado").val(docSnap.data().nombre);
+    }
+  } catch (error) {
+    console.error("Error al obtener nombre del empleado:", error);
+    $("#empleado").val(usuarioActual.email);
+  }
+}
+
+async function guardarParte() {
+  const fecha = $("#fecha").val().trim();
+  const horas = $("#horas").val().trim();
+  const materialUtilizado = $("#materialUtilizado").val().trim();
+
+  if (!fecha || !horas || !materialUtilizado) {
+    alert("Por favor, completa todos los campos.");
+    return;
+  }
+
+  if (horas <= 0) {
+    alert("Las horas deben ser mayor que 0.");
+    return;
+  }
+
+  try {
+    const docRef = await addDoc(collection(db, "partes"), {
+      ticketId: ticketActual.id,
+      titulo: ticketActual.titulo,
+      descripcion: ticketActual.descripcion,
+      localizacion: ticketActual.localizacion,
+      datosCliente: ticketActual.datosCliente,
+      empleadoUid: usuarioActual.uid,
+      fecha: Timestamp.fromDate(new Date(fecha)),
+      horas: Number(horas),
+      materialUtilizado: materialUtilizado,
+      estado: "completado",
+      creadoEn: Timestamp.now()
+    });
+
+    console.log("Parte guardado con ID:", docRef.id);
+
+    await deleteDoc(doc(db, "tickets", ticketActual.id));
+    console.log("Ticket eliminado:", ticketActual.id);
 
     $(".response").fadeIn();
 
-    return new Map([
-        ["fecha", fecha],
-        ["horas", horas],
-        ["materialUtilizado", materialUtilizado],
-    ]);
-}
+    setTimeout(() => {
+      window.location.href = "./home.html";
+    }, 1500);
 
-async function guardarParte(parte) {
-    try {
-        const docRef = await addDoc(collection(db, "partes"), {
-            titulo: parte.titulo,
-            cliente: {
-                nombre: parte.cliente.nombre,
-                telefono: parte.cliente.telefono,
-                email: parte.cliente.email
-            },
-            descripcion: parte.descripcion,
-            localizacion: parte.localicacion,
-            empleados: parte.empleados,
-            prioridad: parte.prioridad,
-            estado: parte.estado,
-            fecha: Timestamp.fromDate(new Date(parte.fecha)),
-            horas: Number(parte.horas),
-            materialUtilizado: parte.materialUtilizado,
-            creadoEn: Timestamp.now()
-        });
-
-        console.log("Parte guardado con ID:", docRef.id);
-        alert("Parte guardado con éxito.");
-        window.location.href = "./home.html";
-
-    } catch (error) {
-        console.error("Error al guardar el parte:", error);
-        alert("Error al guardar el parte: " + error.message);
-    }
+  } catch (error) {
+    console.error("Error al guardar el parte:", error);
+    alert("Error al guardar el parte: " + error.message);
+  }
 }
