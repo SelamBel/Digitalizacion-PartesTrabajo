@@ -7,6 +7,7 @@ $(document).ready(function () {
     }
 
     const fecha = new Date(ticket.creadoEn.seconds * 1000).toLocaleDateString("es-ES");
+    const estadoFormateado = ticket.estado.replace(/_/g, " ");
 
     $("#contenido-ticket").html(`
         <table class="tabla-detalle">
@@ -16,7 +17,7 @@ $(document).ready(function () {
             </tr>
             <tr>
                 <th>Descripción</th>
-                <td>${ticket.descripcion}</td>
+                <td class="td-descripcion">${ticket.descripcion}</td>
             </tr>
             <tr>
                 <th>Localización</th>
@@ -32,7 +33,7 @@ $(document).ready(function () {
             </tr>
             <tr>
                 <th>Estado</th>
-                <td><span class="estado ${ticket.estado}">${ticket.estado}</span></td>
+                <td><span class="estado ${ticket.estado}">${estadoFormateado}</span></td>
             </tr>
             <tr>
                 <th>Fecha de creación</th>
