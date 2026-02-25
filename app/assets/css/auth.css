@@ -1,0 +1,101 @@
+
+*{
+    background: var(--background-main);
+}
+
+main {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: var(--background-main);
+    font-family: sans-serif;
+}
+
+.detalle-container {
+    width: 100%;
+    max-width: 420px;
+    background: var(--background-form);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    top: 300px;
+}
+
+.detalle-container h2 {
+    margin-bottom: 1rem;
+    color: var(--principal-dark);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.detalle-container p {
+    margin-bottom: 2rem;
+    color: var(--font-color-main);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+#form-recuperar div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+#form-recuperar label {
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--font-color-main);
+    font-weight: 500;
+}
+
+#form-recuperar input {
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: var(--background-input);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+#form-recuperar input:focus {
+    outline: none;
+    border-color: var(--principal);
+    box-shadow: 0 0 0 3px rgba(176, 94, 120, 0.15);
+}
+
+.btn-ver {
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 12px;
+    background: var(--principal);
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-ver:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.detalle-container a {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--principal-dark);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.detalle-container a:hover {
+    color: var(--principal);
+    text-decoration: underline;
+}
