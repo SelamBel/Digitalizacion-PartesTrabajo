@@ -16,7 +16,7 @@ $(document).ready(function () {
             </tr>
             <tr>
                 <th>Descripción</th>
-                <td>${parte.descripcion}</td>
+                <td class="td-descripcion">${parte.descripcion}</td>
             </tr>
             <tr>
                 <th>Localización</th>

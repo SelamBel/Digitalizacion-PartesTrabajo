@@ -30,7 +30,7 @@ $(document).ready(function () {
             </tr>
             <tr>
                 <th>Descripción</th>
-                <td>${solicitud.descripcion}</td>
+                <td class="td-descripcion">${solicitud.descripcion}</td>
             </tr>
             <tr>
                 <th>Localización</th>
