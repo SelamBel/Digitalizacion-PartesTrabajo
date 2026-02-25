@@ -30,9 +30,13 @@ body {
 }
 
 @media (max-width: 768px) {
-    table th:nth-child(3), table td:nth-child(3),
-    table th:nth-child(4), table td:nth-child(4),
-    table th:nth-child(5), table td:nth-child(5) {
+
+    table th:nth-child(3),
+    table td:nth-child(3),
+    table th:nth-child(4),
+    table td:nth-child(4),
+    table th:nth-child(5),
+    table td:nth-child(5) {
         display: none;
     }
 
@@ -51,11 +55,25 @@ body {
         background-color: var(--color-estado, #ccc);
     }
 
-    table tr:has(.borrador)  { --color-estado: rgb(151, 151, 151); }
-    table tr:has(.pendiente) { --color-estado: lightsalmon; }
-    table tr:has(.enviado)   { --color-estado: lightskyblue; }
-    table tr:has(.aprobado)  { --color-estado: lightgreen; }
-    table tr:has(.rechazado) { --color-estado: lightcoral; }
+    table tr:has(.borrador) {
+        --color-estado: rgb(151, 151, 151);
+    }
+
+    table tr:has(.pendiente) {
+        --color-estado: lightsalmon;
+    }
+
+    table tr:has(.enviado) {
+        --color-estado: lightskyblue;
+    }
+
+    table tr:has(.aprobado) {
+        --color-estado: lightgreen;
+    }
+
+    table tr:has(.rechazado) {
+        --color-estado: lightcoral;
+    }
 
     td.acciones {
         display: flex !important;
@@ -63,20 +81,20 @@ body {
         align-items: center;
         gap: 2px;
         padding: 15px 0 !important;
-        width: 60px !important; 
+        width: 60px !important;
         min-width: 60px;
         margin-left: 25px;
     }
 
     .acciones button {
-        margin-left: 0 !important; 
-        
+        margin-left: 0 !important;
+
         width: 32px;
         height: 32px;
         padding: 5px;
-        
+
         display: flex;
         justify-content: center;
         align-items: center;
-    }   
+    }
 }

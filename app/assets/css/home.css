@@ -26,9 +26,23 @@ body {
         background-color: var(--color-estado, #ccc);
     }
 
-    table tr:has(.pendiente) { --color-estado: lightsalmon; }
-    table tr:has(.aprobado)  { --color-estado: #36c436; }
-    table tr:has(.rechazado) { --color-estado: lightcoral; }
-    table tr:has(.en_proceso)  { --color-estado: #fff67a; }
-    table tr:has(.completado)  { --color-estado: #164616; }
+    table tr:has(.pendiente) {
+        --color-estado: lightsalmon;
+    }
+
+    table tr:has(.aprobado) {
+        --color-estado: #36c436;
+    }
+
+    table tr:has(.rechazado) {
+        --color-estado: lightcoral;
+    }
+
+    table tr:has(.en_proceso) {
+        --color-estado: #fff67a;
+    }
+
+    table tr:has(.completado) {
+        --color-estado: #164616;
+    }
 }
