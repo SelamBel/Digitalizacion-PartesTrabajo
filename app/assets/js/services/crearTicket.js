@@ -1,7 +1,7 @@
 import { db } from "../firebase/firebase-config.js";
-import { 
-    collection, getDocs, doc, getDoc, addDoc, deleteDoc, query, 
-    where, Timestamp 
+import {
+    collection, getDocs, doc, getDoc, addDoc, deleteDoc, query,
+    where, Timestamp
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 $(document).ready(async function () {
@@ -103,8 +103,10 @@ async function guardarTicket() {
             console.log("Solicitud eliminada:", solicitudId);
         }
 
-        alert("Ticket creado con éxito.");
-        window.location.href = "./homeAdmin.html";
+        $(".response").fadeIn();
+        setTimeout(() => {
+            window.location.href = "./homeAdmin.html";
+        }, 1500);
 
     } catch (error) {
         console.error("Error al crear el ticket:", error);
