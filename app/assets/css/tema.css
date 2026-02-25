@@ -6,10 +6,10 @@
     --succes: rgba(100, 197, 132, 0.33);
 
     --background: var(--white);
-    --background-main: var(--white );
+    --background-main: var(--white);
     --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
-    --background-form: var(--white );
-    --background-input: var(--white );
+    --background-form: var(--white);
+    --background-input: var(--white);
     --background-input-disabled: #c7c7c7;
     --font-color-title: var(--white);
     --font-color-main: var(--black);
@@ -25,16 +25,26 @@
     --principal-dark: rgb(22, 22, 22);
     --principal-light: rgb(114, 114, 114);
 
+    --succes-borde: var(--red-dark);
+    --succes: var(--red-light);
+
     --background: rgb(129, 129, 129);
     --background-main: rgb(197, 197, 197);
-    --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
+    --background-login: linear-gradient(var(--principal-dark), var(--red-dark));
     --background-form: rgb(226, 226, 226);
-    --background-input: var(--white );
+    --background-input: var(--white);
     --font-color-title: var(--white);
     --font-color-main: var(--black);
-    --button-hover: rgb(255, 0, 0);
+    --button-hover: var(--red);
     --white: #f1f1f1;
     --black: #333;
+
+    --red: rgb(255, 0, 0);
+    --red-dark: rgb(189, 0, 0);
+    --red-light: rgb(255, 151, 151);
+
+    --logout-button: var(--red);
+    --logout-button-hover: var(--red-dark);
 }
 
 :root.dani {
@@ -46,7 +56,7 @@
     --background-main: rgb(197, 197, 197);
     --background-login: linear-gradient(var(--principal-dark), var(--principal-light));
     --background-form: rgb(180, 180, 180);
-    --background-input: var(--white );
+    --background-input: var(--white);
     --font-color-title: var(--white);
     --font-color-main: var(--black);
     --button-hover: rgb(4, 64, 75);
@@ -110,4 +120,3 @@
     --logout-button: rgb(176, 140, 94);
     --logout-button-hover: rgb(150, 120, 80);
 }
-

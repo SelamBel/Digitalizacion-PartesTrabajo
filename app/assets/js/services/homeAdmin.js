@@ -15,7 +15,8 @@ $(document).ready(function () {
 
     $(document).on("click", ".fila-solicitud", function () {
         const id = $(this).data("id");
-        window.location.href = `./crearTicket.html?solicitudId=${id}`;
+        localStorage.setItem("solicitudSeleccionada", JSON.stringify({ id: doc.id, ...s }));
+        window.location.href = `./detalle-solicitud.html?solicitudId=${id}`;
     });
 });
 
@@ -39,16 +40,24 @@ async function cargarSolicitudes() {
         querySnapshot.forEach((doc) => {
             const s = doc.data();
             const fecha = s.creadoEn.toDate().toLocaleDateString("es-ES");
+            const estadoFormateado = s.estado.replace(/_/g, " ");
 
-            tbody.append(`
-                <tr class="fila-solicitud" data-id="${doc.id}" style="cursor:pointer">
+            const fila = $(`
+                <tr style="cursor:pointer">
                     <td>${s.cliente.nombre}</td>
                     <td>${fecha}</td>
                     <td>${s.titulo}</td>
                     <td>${s.localizacion}</td>
-                    <td><span class="estado ${s.estado}">${s.estado}</span></td>
+                    <td><span class="estado ${s.estado}">${estadoFormateado}</span></td>
                 </tr>
             `);
+
+            fila.on("click", () => {
+                localStorage.setItem("solicitudSeleccionada", JSON.stringify({ id: doc.id, ...s }));
+                window.location.href = `./detalle-solicitud.html?solicitudId=${doc.id}`;
+            });
+
+            tbody.append(fila);
         });
 
     } catch (error) {
@@ -59,7 +68,7 @@ async function cargarSolicitudes() {
 async function cargarTickets() {
     try {
         const q = query(
-            collection(db, "solicitudes"), 
+            collection(db, "solicitudes"),
             orderBy("creadoEn", "desc")
         );
     } catch (error) {
