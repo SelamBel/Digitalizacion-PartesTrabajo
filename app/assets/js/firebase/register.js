@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 nombre: nombre,
                 dni: dni,
                 email: email,
-                rol: "usuario",
+                rol: "empleado",
                 createdAt: serverTimestamp() 
             });
 
