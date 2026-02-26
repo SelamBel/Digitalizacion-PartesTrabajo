@@ -21,45 +21,43 @@
 
     <div class="header-container"></div>
     <main>
-            <form id="form_partes">
-                <fieldset>
-                    <label for="cliente">Cliente</label>
-                    <textarea id="descripcionCliente" rows="3" value="Datos del cliente" disabled></textarea>
+        <form id="form_partes">
+            <fieldset>
+                <label for="cliente">Cliente</label>
+                <textarea id="descripcionCliente" rows="3" value="Datos del cliente" disabled></textarea>
 
-                    <label for="titulo">Título de la solicitud</label>
-                    <input type="text" id="titulo" name="titulo" value="Ej: Reparación impresora" disabled>
+                <label for="titulo">Título de la solicitud</label>
+                <input type="text" id="titulo" name="titulo" value="Ej: Reparación impresora" disabled>
 
-                    <label for="descripcion">Descripción de la solicitud</label>
-                    <textarea id="descripcionSolicitud" rows="4" value="Describe el problema o tarea"
-                        disabled></textarea>
+                <label for="descripcion">Descripción de la solicitud</label>
+                <textarea id="descripcionSolicitud" rows="4" value="Describe el problema o tarea" disabled></textarea>
 
-                    <label for="localizacion">Localización de el problema</label>
-                    <input type="text" id="localizacion" name="localizacion" disabled>
+                <label for="localizacion">Localización de el problema</label>
+                <input type="text" id="localizacion" name="localizacion" disabled>
 
-                    <label for="empleado">Asignar a empleado</label>
-                    <select id="empleado" name="empleado" multiple disabled>
-                    </select>
+                <label for="empleado">Empleado asignado</label>
+                <input type="text" id="empleado" name="empleado" disabled>
 
-                    <label for="fecha">Fecha:</label>
-                    <input type="date" name="fecha" id="fecha" value><br>
+                <label for="fecha">Fecha:</label>
+                <input type="date" name="fecha" id="fecha" value><br>
 
-                    <label for="horas">Horas trabajadas:</label>
-                    <input type="number" name="horas" id="horas"><br>
+                <label for="horas">Horas trabajadas:</label>
+                <input type="number" name="horas" id="horas"><br>
 
-                    <label for="material">Material utilizado:</label>
-                    <textarea id="materialUtilizado" rows="5"></textarea><br>
-                </fieldset>
-                
-                <div class="response"> <i class="fa-regular fa-circle-check"></i> Datos recogidos con exito</div>
+                <label for="material">Material utilizado:</label>
+                <textarea id="materialUtilizado" rows="5"></textarea><br>
+            </fieldset>
 
-                <div class="botones">
-                    <button type="button" id="cancelarParte" class="cancelar">
-                      Cancelar
-                    </button>
-                    <input type="submit" id="submitParte" class="button" value="Guardar">
-                </div>
+            <div class="response"> <i class="fa-regular fa-circle-check"></i> Datos recogidos con exito</div>
 
-            </form>
+            <div class="botones">
+                <button type="button" id="cancelarParte" class="cancelar">
+                    Cancelar
+                </button>
+                <input type="submit" id="submitParte" class="button" value="Guardar">
+            </div>
+
+        </form>
     </main>
 
     <div class="footer-container"></div>

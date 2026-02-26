@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     initTheme();
 
-    $(".header-container").load("assets/header-footer/header.html", function () {
+    $(".header-container").load("assets/header-footer/header-nolog.html", function () {
         $("#headerTitle").text(document.title);
 
         const temaActual = localStorage.getItem("tema") || "default";
@@ -18,17 +18,6 @@ $(document).ready(function () {
             const tema = $(this).data("tema") || $(this).text().toLowerCase();
             setTheme(tema);
             $(this).closest("ul").prependTo("#liBtnCambiarTema");
-        });
-
-        $("#btnCerrarSesion").on("click", async function () {
-            try {
-                await signOut(auth);
-                console.log("Sesión cerrada correctamente");
-                window.location.href = "../index.html";
-            } catch (error) {
-                console.error("Error al cerrar sesión:", error);
-                alert("Error al cerrar sesión: " + error.message);
-            }
         });
     })
 

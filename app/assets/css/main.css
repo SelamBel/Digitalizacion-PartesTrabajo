@@ -163,11 +163,20 @@ tr:hover {
 .estado {
     padding: 5px 12px;
     border-radius: 20px;
-    color: white;
+    color: black;
     font-weight: bold;
     display: inline-block;
     text-align: center;
     min-width: 80px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+.en_proceso {
+    --color-estado: rgb(255, 246, 122);
+    background-color: var(--color-estado);
+    color: var(--black);
 }
 
 .pendiente {
@@ -182,6 +191,11 @@ tr:hover {
 
 .aprobado {
     --color-estado: lightgreen;
+    background-color: var(--color-estado);
+}
+
+.completado {
+    --color-estado: rgb(54, 196, 54);
     background-color: var(--color-estado);
 }
 
@@ -215,7 +229,7 @@ label {
 
 input,
 textarea,
-select{
+select {
     width: 100%;
     padding: 10px;
     border-radius: 8px;
@@ -225,7 +239,7 @@ select{
     background-color: var(--background-input);
 }
 
-select {
+select[multiple] {
     padding: 0;
 }
 
@@ -258,22 +272,28 @@ input[disabled],
     background-color: var(--background-input-disabled);
 }
 
-select[multiple]:disabled option:checked {
-    background-color: var(--button-hover) !important;
-    color: white !important;
-}
-
-select[multiple]::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 6px;
+    height: 6px;
 }
 
-select[multiple]::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: transparent;
 }
 
-select[multiple]::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: var(--principal);
     border-radius: 10px;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--principal) transparent;
+}
+
+select[multiple]:disabled option:checked {
+    background-color: var(--button-hover) !important;
+    color: white !important;
 }
 
 input:focus,
@@ -333,6 +353,29 @@ a.button {
 .botones input[type="submit"] {
     flex: 1;
     margin-top: 0;
+}
+
+
+
+.tabla-detalle td {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+table td {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tabla-detalle .td-descripcion {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    max-width: none;
 }
 
 
